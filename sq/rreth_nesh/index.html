@@ -1,1 +1,956 @@
+<!DOCTYPE html>
+<html lang="sq">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>LindiMaps | Rreth Nesh</title>
+  <link rel="canonical" href="https://lindimaps.com/sq/rreth_nesh/" />
 
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="../../assets/css/cassio-lindimaps.css" />
+
+  <style>
+    .about-hero{
+      padding:110px 0 54px;
+    }
+
+    .about-grid{
+      display:grid;
+      grid-template-columns:minmax(320px,.9fr) minmax(0,1.1fr);
+      gap:22px;
+      align-items:stretch;
+    }
+
+    .about-card,
+    .about-panel,
+    .timeline-card,
+    .value-card,
+    .metric-card,
+    .modal-panel{
+      border:1px solid var(--line);
+      border-radius:32px;
+      background:linear-gradient(180deg,rgba(255,255,255,.03),rgba(255,255,255,.015));
+      box-shadow:var(--shadow);
+    }
+
+    .about-card{
+      overflow:hidden;
+      position:relative;
+      min-height:650px;
+      background:#141412;
+    }
+
+    .about-card img{
+      width:100%;
+      height:100%;
+      object-fit:cover;
+      filter:grayscale(.12) brightness(.82);
+    }
+
+    .about-card::before{
+      content:"";
+      position:absolute;
+      inset:0;
+      background:linear-gradient(180deg,rgba(0,0,0,.05),rgba(0,0,0,.78));
+      z-index:1;
+    }
+
+    .about-card-copy{
+      position:absolute;
+      inset:auto 26px 26px;
+      z-index:2;
+      padding:22px;
+      border:1px solid rgba(255,255,255,.12);
+      border-radius:24px;
+      background:rgba(13,13,12,.54);
+      backdrop-filter:blur(10px);
+    }
+
+    .about-card-copy h2{
+      margin:0 0 8px;
+      font-family:"Cormorant Garamond",serif;
+      font-size:44px;
+      line-height:.95;
+      text-transform:uppercase;
+    }
+
+    .about-card-copy p{
+      margin:0;
+      color:#ded6cb;
+      line-height:1.7;
+    }
+
+    .cv-link{
+      display:inline-flex;
+      align-items:center;
+      gap:10px;
+      margin-top:16px;
+      font-size:12px;
+      letter-spacing:.24em;
+      text-transform:uppercase;
+      color:var(--accent);
+      cursor:pointer;
+    }
+
+    .about-panel{
+      padding:34px;
+      display:flex;
+      flex-direction:column;
+      justify-content:space-between;
+      gap:28px;
+    }
+
+    .about-title{
+      font-family:"Cormorant Garamond",serif;
+      font-size:clamp(42px,5vw,82px);
+      line-height:.9;
+      text-transform:uppercase;
+      margin:12px 0 16px;
+    }
+
+    .about-title span{
+      display:block;
+      color:var(--accent-2);
+    }
+
+    .lead-text{
+      color:var(--muted);
+      font-size:17px;
+      line-height:1.9;
+      max-width:760px;
+    }
+
+    .metrics{
+      display:grid;
+      grid-template-columns:repeat(4,minmax(0,1fr));
+      gap:16px;
+    }
+
+    .metric-card{
+      padding:20px 18px;
+    }
+
+    .metric-card strong{
+      display:block;
+      font-family:"Cormorant Garamond",serif;
+      font-size:38px;
+      line-height:1;
+      margin-bottom:8px;
+    }
+
+    .metric-card span{
+      display:block;
+      font-size:11px;
+      letter-spacing:.2em;
+      text-transform:uppercase;
+      color:var(--muted);
+      line-height:1.7;
+    }
+
+    .dual-actions{
+      display:flex;
+      flex-wrap:wrap;
+      gap:14px;
+    }
+
+    .section-stack{
+      display:grid;
+      gap:18px;
+    }
+
+    .timeline-grid{
+      display:grid;
+      grid-template-columns:repeat(3,minmax(0,1fr));
+      gap:18px;
+    }
+
+    .timeline-card{
+      padding:28px;
+      position:relative;
+      overflow:hidden;
+    }
+
+    .timeline-year{
+      font-size:12px;
+      letter-spacing:.3em;
+      text-transform:uppercase;
+      color:var(--accent);
+      margin-bottom:18px;
+      display:block;
+    }
+
+    .timeline-card h3{
+      margin:0 0 12px;
+      font-family:"Cormorant Garamond",serif;
+      font-size:34px;
+      line-height:1;
+      text-transform:uppercase;
+    }
+
+    .timeline-card p{
+      margin:0;
+      color:var(--muted);
+      line-height:1.8;
+    }
+
+    .values-grid{
+      display:grid;
+      grid-template-columns:repeat(3,minmax(0,1fr));
+      gap:18px;
+    }
+
+    .value-card{
+      padding:30px;
+      min-height:240px;
+    }
+
+    .value-card .service-index{
+      color:rgba(255,255,255,.14);
+    }
+
+    .value-card h3{
+      font-family:"Cormorant Garamond",serif;
+      font-size:36px;
+      line-height:1;
+      text-transform:uppercase;
+      margin:18px 0 12px;
+    }
+
+    .value-card p{
+      color:var(--muted);
+      line-height:1.8;
+      margin:0;
+    }
+
+    .quote-row{
+      display:grid;
+      grid-template-columns:1.1fr .9fr;
+      gap:18px;
+    }
+
+    .network-grid{
+      display:grid;
+      grid-template-columns:repeat(4,minmax(0,1fr));
+      gap:18px;
+    }
+
+    .network-card{
+      border:1px solid var(--line);
+      border-radius:28px;
+      background:linear-gradient(180deg,rgba(255,255,255,.03),rgba(255,255,255,.015));
+      box-shadow:var(--shadow);
+      padding:24px;
+      display:flex;
+      flex-direction:column;
+      justify-content:space-between;
+      min-height:220px;
+      transition:.25s ease;
+    }
+
+    .network-card:hover{
+      transform:translateY(-4px);
+      border-color:rgba(255,255,255,.14);
+    }
+
+    .network-card img,
+    .network-card svg{
+      height:42px;
+      width:auto;
+      max-width:160px;
+      object-fit:contain;
+      margin-bottom:18px;
+    }
+
+    .network-card h4{
+      font-family:"Cormorant Garamond",serif;
+      font-size:30px;
+      text-transform:uppercase;
+      line-height:1;
+      margin:0 0 10px;
+    }
+
+    .network-card span{
+      font-size:11px;
+      letter-spacing:.2em;
+      text-transform:uppercase;
+      color:var(--muted);
+    }
+
+    .pub-list{
+      display:grid;
+      grid-template-columns:repeat(4,minmax(0,1fr));
+      gap:18px;
+    }
+
+    .pub-card{
+      border:1px solid var(--line);
+      border-radius:28px;
+      overflow:hidden;
+      background:linear-gradient(180deg,rgba(255,255,255,.03),rgba(255,255,255,.015));
+      box-shadow:var(--shadow);
+      transition:.25s ease;
+    }
+
+    .pub-card:hover{
+      transform:translateY(-4px);
+    }
+
+    .pub-card img{
+      width:100%;
+      height:320px;
+      object-fit:cover;
+      background:#0f0f0d;
+    }
+
+    .pub-copy{
+      padding:18px;
+    }
+
+    .pub-copy h4{
+      margin:0 0 8px;
+      font-family:"Cormorant Garamond",serif;
+      font-size:26px;
+      line-height:1.05;
+      text-transform:uppercase;
+    }
+
+    .pub-copy p{
+      margin:0;
+      color:var(--muted);
+      font-size:14px;
+      line-height:1.7;
+    }
+
+    .scroll-top{
+      position:fixed;
+      right:22px;
+      bottom:22px;
+      z-index:30;
+      width:56px;
+      height:56px;
+      border:none;
+      border-radius:999px;
+      background:var(--accent);
+      color:#16120d;
+      box-shadow:var(--shadow);
+      display:grid;
+      place-items:center;
+      cursor:pointer;
+      opacity:0;
+      visibility:hidden;
+      transform:translateY(14px);
+      transition:.25s ease;
+    }
+
+    .scroll-top.show{
+      opacity:1;
+      visibility:visible;
+      transform:none;
+    }
+
+    .modal{
+      position:fixed;
+      inset:0;
+      z-index:80;
+      background:rgba(8,8,8,.82);
+      backdrop-filter:blur(14px);
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      padding:22px;
+      opacity:0;
+      visibility:hidden;
+      transition:.25s ease;
+    }
+
+    .modal.show{
+      opacity:1;
+      visibility:visible;
+    }
+
+    .modal-panel{
+      width:min(1100px,100%);
+      max-height:88vh;
+      overflow:auto;
+      padding:26px;
+    }
+
+    .modal-head{
+      display:flex;
+      align-items:center;
+      justify-content:space-between;
+      gap:20px;
+      margin-bottom:20px;
+    }
+
+    .modal-head h3{
+      margin:0;
+      font-family:"Cormorant Garamond",serif;
+      font-size:42px;
+      line-height:1;
+      text-transform:uppercase;
+    }
+
+    .modal-close{
+      border:1px solid rgba(255,255,255,.12);
+      background:rgba(255,255,255,.04);
+      color:var(--text);
+      border-radius:999px;
+      padding:12px 18px;
+      cursor:pointer;
+      font-size:11px;
+      letter-spacing:.24em;
+      text-transform:uppercase;
+    }
+
+    .cv-frame{
+      width:100%;
+      height:70vh;
+      border:none;
+      border-radius:22px;
+      background:#fff;
+    }
+
+    @media (max-width: 1100px){
+      .about-grid,
+      .quote-row,
+      .contact-grid{
+        grid-template-columns:1fr;
+      }
+
+      .metrics,
+      .timeline-grid,
+      .values-grid,
+      .network-grid,
+      .pub-list{
+        grid-template-columns:repeat(2,minmax(0,1fr));
+      }
+    }
+
+    @media (max-width: 760px){
+      .about-hero{
+        padding:90px 0 40px;
+      }
+
+      .about-panel,
+      .timeline-card,
+      .value-card{
+        padding:24px;
+      }
+
+      .metrics,
+      .timeline-grid,
+      .values-grid,
+      .network-grid,
+      .pub-list{
+        grid-template-columns:1fr;
+      }
+
+      .about-card{
+        min-height:520px;
+      }
+
+      .about-card-copy h2{
+        font-size:34px;
+      }
+
+      .about-title{
+        font-size:52px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="site-shell">
+    <header class="topbar">
+      <div class="container topbar-inner">
+        <a class="brand" href="/">
+          <span class="brand-mark">
+            <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path d="M12 2L4.5 20.29L5.21 21L12 18L18.79 21L19.5 20.29L12 2Z" stroke="white" stroke-width="1.7" stroke-linejoin="round"/>
+              <circle cx="12" cy="11" r="2.2" fill="#c8a67a"/>
+            </svg>
+          </span>
+          <span class="brand-copy">
+            <span class="brand-name">LindiMaps</span>
+            <span class="brand-tag">Spatial Intelligence</span>
+          </span>
+        </a>
+
+        <button class="mobile-toggle" data-nav-toggle>Menu</button>
+
+        <nav class="nav" data-nav>
+          <a href="/">Kreu</a>
+          <a href="/sq/sherbime/">Shërbime</a>
+          <a href="/sq/projekte/">Projekte</a>
+          <a href="/sq/rreth_nesh/" class="active">Rreth Nesh</a>
+          <a href="/sq/kontakte/">Kontakte</a>
+          <a class="nav-cta" href="/sq/akademia/">LindiMaps Academy</a>
+          <span class="lang-switch">
+            <a href="/sq/rreth_nesh/" class="active">SQ</a>
+            <a href="/en/about/">EN</a>
+          </span>
+        </nav>
+      </div>
+    </header>
+
+    <main>
+      <section class="about-hero">
+        <div class="container about-grid">
+          <article class="about-card reveal">
+            <img
+              src="https://fujqjgcciajwfbsvmlnk.supabase.co/storage/v1/object/sign/Media/Profile%20Photo/erland%20alla.JPG?token=eyJraWQiOiJzdG9yYWdlLXVybC1zaWduaW5nLWtleV83MDk0YTIxNy0zZDE5LTQwNTMtYjk3Yy05ZjI0MzI1ZTkxNjciLCJhbGciOiJIUzI1NiJ9.eyJ1cmwiOiJNZWRpYS9Qcm9maWxlIFBob3RvL2VybGFuZCBhbGxhLkpQRyIsImlhdCI6MTc3MjEwMzY0OSwiZXhwIjoxODAzNjM5NjQ5fQ.-jWwPFWe1MBYu2SI4RqDBs-lNHBIyiE6g1xWv6-pXoA"
+              alt="M.Sc Erland Alla"
+            />
+            <div class="about-card-copy">
+              <div class="kicker">Themelues & Lead Engineer</div>
+              <h2>M.Sc Erland Alla</h2>
+              <p>Ekspertizë në GIS, Remote Sensing dhe zhvillim të produkteve gjeohapësinore për vendimmarrje moderne.</p>
+              <div id="cv-trigger" class="cv-link">Shiko CV</div>
+            </div>
+          </article>
+
+          <article class="about-panel reveal">
+            <div>
+              <div class="eyebrow">Misioni & Vizioni</div>
+              <h1 class="about-title">Ekspert në <span>Gjeoinformatikë</span></h1>
+              <p class="lead-text">
+                Inxhinier gjeoinformatikë me përvojë të gjerë në analizën gjeohapësinore, përpunimin e të dhënave satelitore dhe implementimin e teknologjive GIS në projekte kombëtare dhe ndërkombëtare.
+              </p>
+              <p class="lead-text">
+                Fokusi kryesor qëndron në zhvillimin e produkteve të avancuara gjeohapësinore që mbështesin vendimmarrjen e bazuar në të dhëna, bashkëpunimin ndërdisiplinor dhe transformimin dixhital të territorit.
+              </p>
+            </div>
+
+            <div class="metrics">
+              <div class="metric-card">
+                <strong>M.Sc</strong>
+                <span>Inxhinieri</span>
+              </div>
+              <div class="metric-card">
+                <strong>GIS</strong>
+                <span>Specializimi</span>
+              </div>
+              <div class="metric-card">
+                <strong>Co-Author</strong>
+                <span>Botime Shkencore</span>
+              </div>
+              <div class="metric-card">
+                <strong>Rrjetet</strong>
+                <span>Lidhjet Dixhitale</span>
+              </div>
+            </div>
+
+            <div class="dual-actions">
+              <button class="btn btn-primary" id="co-author-trigger" type="button">Botimet</button>
+              <button class="btn btn-secondary" id="network-trigger" type="button">Rrjeti Profesional</button>
+            </div>
+          </article>
+        </div>
+      </section>
+
+      <section class="section">
+        <div class="container">
+          <div class="section-head reveal">
+            <div>
+              <div class="kicker">Udhëtimi ynë</div>
+              <h2 class="section-title">Historia jonë</h2>
+            </div>
+            <p class="section-desc">
+              Një rrugëtim që fillon nga pasioni për gjeoinformacionin dhe vazhdon me integrimin e zgjidhjeve moderne GIS dhe Remote Sensing në projekte reale.
+            </p>
+          </div>
+
+          <div class="timeline-grid">
+            <article class="timeline-card reveal">
+              <span class="timeline-year">2024</span>
+              <h3>Fillimet</h3>
+              <p>Fillimi i konceptit të një platforme që pasqyron pasionin dhe përvojën në fushën e Gjeoinformacionit (GIS).</p>
+            </article>
+
+            <article class="timeline-card reveal">
+              <span class="timeline-year">2025</span>
+              <h3>Zgjerimi</h3>
+              <p>Integrimi i teknologjive GIS dhe Remote Sensing në bashkëpunimet e para me sektorin publik dhe në rrjedha pune më të strukturuara.</p>
+            </article>
+
+            <article class="timeline-card reveal">
+              <span class="timeline-year">Sot</span>
+              <h3>Risi në GIS</h3>
+              <p>Një pikë referimi për zgjidhje, analiza dhe planifikime të ndryshme gjeohapësinore me fokus te cilësia dhe përdorshmëria.</p>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <section class="section">
+        <div class="container section-stack">
+          <div class="section-head reveal">
+            <div>
+              <div class="kicker">Parimet tona</div>
+              <h2 class="section-title">Vlerat tona</h2>
+            </div>
+            <p class="section-desc">
+              Qasja e LindiMaps mbështetet në teknologji, saktësi dhe besueshmëri, duke e kthyer çdo projekt në një produkt të pastër profesional.
+            </p>
+          </div>
+
+          <div class="values-grid">
+            <article class="value-card reveal">
+              <div class="service-index">01</div>
+              <h3>Inovacioni</h3>
+              <p>Përdorimi i teknologjive më të fundit satelitore dhe GIS për të ndërtuar zgjidhje territoriale me vlerë reale.</p>
+            </article>
+
+            <article class="value-card reveal">
+              <div class="service-index">02</div>
+              <h3>Saktësia</h3>
+              <p>Integriteti dhe cilësia e të dhënave gjeohapësinore mbeten prioritet absolut në çdo proces analitik dhe hartografik.</p>
+            </article>
+
+            <article class="value-card reveal">
+              <div class="service-index">03</div>
+              <h3>Integriteti</h3>
+              <p>Transparencë, profesionalizëm dhe standard i lartë pune në bashkëpunime, raportim dhe zhvillim produktesh.</p>
+            </article>
+          </div>
+
+          <div class="quote-row">
+            <article class="quote-card reveal">
+              <p>“Inteligjenca hapësinore bëhet e vlefshme kur të dhënat përkthehen në vendimmarrje të qartë.”</p>
+              <span>LindiMaps — vizion profesional</span>
+            </article>
+
+            <article class="quote-card reveal">
+              <p>“Nga analiza e territorit te produkti final, çdo detaj duhet të jetë i saktë, i kuptueshëm dhe i përdorshëm.”</p>
+              <span>GIS • Remote Sensing • WebGIS</span>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <section class="section">
+        <div class="container">
+          <div class="section-head reveal">
+            <div>
+              <div class="kicker">Portofoli Akademik</div>
+              <h2 class="section-title">Botimet shkencore</h2>
+            </div>
+            <p class="section-desc">
+              Të gjitha lidhjet e publikimeve ruhen si në faqen origjinale dhe mund të hapen direkt.
+            </p>
+          </div>
+
+          <div class="pub-list">
+            <a href="https://www.intechopen.com/chapters/1218612" target="_blank" class="pub-card reveal">
+              <img src="https://fujqjgcciajwfbsvmlnk.supabase.co/storage/v1/object/sign/Media/Botimet%20Shkencore%20Kopertinat/Island%20Ecology.JPG?token=eyJraWQiOiJzdG9yYWdlLXVybC1zaWduaW5nLWtleV83MDk0YTIxNy0zZDE5LTQwNTMtYjk3Yy05ZjI0MzI1ZTkxNjciLCJhbGciOiJIUzI1NiJ9.eyJ1cmwiOiJNZWRpYS9Cb3RpbWV0IFNoa2VuY29yZSBLb3BlcnRpbmF0L0lzbGFuZCBFY29sb2d5LkpQRyIsImlhdCI6MTc3MjMxOTU4OCwiZXhwIjoxODAzODU1NTg4fQ.qAcF_l74get0ZpvOQOf7TcZts6SN6hTtQQM9mo2-vEM" alt="Publikim 1">
+              <div class="pub-copy">
+                <h4>Island Ecology</h4>
+                <p>Kapitull shkencor i aksesueshëm në IntechOpen.</p>
+              </div>
+            </a>
+
+            <a href="https://www.intechopen.com/chapters/1218612" target="_blank" class="pub-card reveal">
+              <img src="https://fujqjgcciajwfbsvmlnk.supabase.co/storage/v1/object/sign/Media/Botimet%20Shkencore%20Kopertinat/Heritage%20Management.JPG?token=eyJraWQiOiJzdG9yYWdlLXVybC1zaWduaW5nLWtleV83MDk0YTIxNy0zZDE5LTQwNTMtYjk3Yy05ZjI0MzI1ZTkxNjciLCJhbGciOiJIUzI1NiJ9.eyJ1cmwiOiJNZWRpYS9Cb3RpbWV0IFNoa2VuY29yZSBLb3BlcnRpbmF0L0hlcml0YWdlIE1hbmFnZW1lbnQuSlBHIiwiaWF0IjoxNzcyMzE5NTQ3LCJleHAiOjE4MDM4NTU1NDd9.swDyzezu6Y-VNN44Dp_JUeWOl41UNMCmlGG0Fma-Ork" alt="Publikim 2">
+              <div class="pub-copy">
+                <h4>Heritage Management</h4>
+                <p>Material i lidhur me trashëgiminë kulturore dhe menaxhimin e saj.</p>
+              </div>
+            </a>
+
+            <a href="https://online-journals.org/index.php/i-jim/article/view/54599" target="_blank" class="pub-card reveal">
+              <img src="https://online-journals.org/public/journals/4/cover_issue_1275_en_US.png" alt="Publikim 3">
+              <div class="pub-copy">
+                <h4>iJIM Article</h4>
+                <p>Publikim në revistë akademike me qasje online.</p>
+              </div>
+            </a>
+
+            <a href="https://www.researchgate.net/publication/393674156_LUBONJA_-_NJE_KAPITULL_I_RI_NE_TRASHEGIMINE_KULTURORE_DHE_NATYRORE_SHQIPTARE?channel=doi&linkId=687540da3c12dc437a3eb078&showFulltext=true" target="_blank" class="pub-card reveal">
+              <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTTn5tXM0v-m4XJ9LhSS171CVOkDlhB0ZqtVA&s" alt="Publikim 4">
+              <div class="pub-copy">
+                <h4>Lubonja</h4>
+                <p>Publikim i aksesueshëm përmes ResearchGate.</p>
+              </div>
+            </a>
+          </div>
+        </div>
+      </section>
+
+      <section class="section" id="network-section">
+        <div class="container">
+          <div class="section-head reveal">
+            <div>
+              <div class="kicker">Prezenca Dixhitale</div>
+              <h2 class="section-title">Rrjeti profesional</h2>
+            </div>
+            <p class="section-desc">
+              Lidhjet dixhitale të profilit profesional ruhen pa asnjë ndryshim.
+            </p>
+          </div>
+
+          <div class="network-grid">
+            <a href="https://www.linkedin.com/in/erland-alla/" target="_blank" class="network-card reveal">
+              <div>
+                <svg fill="#0077b5" viewBox="0 0 24 24">
+                  <path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"/>
+                </svg>
+                <h4>LinkedIn</h4>
+              </div>
+              <span>linkedin.com</span>
+            </a>
+
+            <a href="https://www.researchgate.net/profile/Erland-Alla" target="_blank" class="network-card reveal">
+              <div>
+                <img src="https://c5.rgstatic.net/m/32868743212969/images/template/rg_logo_square_brand.png" alt="ResearchGate">
+                <h4>ResearchGate</h4>
+              </div>
+              <span>researchgate.net</span>
+            </a>
+
+            <a href="https://scholar.google.com/citations?user=8HofjlEAAAAJ&hl=en" target="_blank" class="network-card reveal">
+              <div>
+                <img src="https://scholar.google.com/intl/en/scholar/images/2x/scholar_logo_64dp.png" alt="Google Scholar">
+                <h4>Google Scholar</h4>
+              </div>
+              <span>scholar.google.com</span>
+            </a>
+
+            <a href="https://orcid.org/0009-0008-5121-7564" target="_blank" class="network-card reveal">
+              <div>
+                <img src="https://orcid.org/assets/vectors/orcid.logo.svg" alt="ORCID">
+                <h4>ORCID iD</h4>
+              </div>
+              <span>orcid.org</span>
+            </a>
+          </div>
+        </div>
+      </section>
+
+      <section class="section" id="contact">
+        <div class="container">
+          <div class="section-head reveal">
+            <div>
+              <div class="kicker">Kontakte</div>
+              <h2 class="section-title">Na kontaktoni</h2>
+            </div>
+            <p class="section-desc">
+              Navigimi dhe orientimi mbeten të sinkronizuara me strukturën aktuale të faqes.
+            </p>
+          </div>
+
+          <div class="contact-grid">
+            <div class="contact-card reveal">
+              <div class="contact-list">
+                <div class="contact-item">
+                  <div class="contact-label">Zyra</div>
+                  <div class="contact-value">Tiranë, Shqipëri</div>
+                </div>
+                <div class="contact-item">
+                  <div class="contact-label">Email</div>
+                  <div class="contact-value">contact@lindimaps.com</div>
+                </div>
+                <div class="contact-item">
+                  <div class="contact-label">Orari</div>
+                  <div class="contact-value">Hën - Pre | 09:00 - 17:00</div>
+                </div>
+              </div>
+            </div>
+
+            <div class="contact-card reveal">
+              <div class="contact-list">
+                <div class="contact-item">
+                  <div class="contact-label">Eksploro</div>
+                  <div class="contact-value"><a href="/sq/sherbime/">Shërbimet</a></div>
+                </div>
+                <div class="contact-item">
+                  <div class="contact-label">Portofoli</div>
+                  <div class="contact-value"><a href="/sq/projekte/">Projektet</a></div>
+                </div>
+                <div class="contact-item">
+                  <div class="contact-label">Academy</div>
+                  <div class="contact-value"><a href="/sq/akademia/">LindiMaps Academy</a></div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <footer class="footer">
+            <div class="footer-inner">
+              <div class="footer-copy">© 2024 LindiMaps Studio. Të gjitha të drejtat të rezervuara.</div>
+              <div class="footer-links">
+                <a href="#">Privacy Policy</a>
+                <a href="#">Terms of Service</a>
+              </div>
+            </div>
+          </footer>
+        </div>
+      </section>
+    </main>
+  </div>
+
+  <div id="publications-modal" class="modal">
+    <div class="modal-panel">
+      <div class="modal-head">
+        <div>
+          <div class="kicker">Portofoli Akademik</div>
+          <h3>Botimet Shkencore</h3>
+        </div>
+        <button class="modal-close" data-close="publications-modal">Mbyll</button>
+      </div>
+
+      <div class="pub-list">
+        <a href="https://www.intechopen.com/chapters/1218612" target="_blank" class="pub-card">
+          <img src="https://fujqjgcciajwfbsvmlnk.supabase.co/storage/v1/object/sign/Media/Botimet%20Shkencore%20Kopertinat/Island%20Ecology.JPG?token=eyJraWQiOiJzdG9yYWdlLXVybC1zaWduaW5nLWtleV83MDk0YTIxNy0zZDE5LTQwNTMtYjk3Yy05ZjI0MzI1ZTkxNjciLCJhbGciOiJIUzI1NiJ9.eyJ1cmwiOiJNZWRpYS9Cb3RpbWV0IFNoa2VuY29yZSBLb3BlcnRpbmF0L0lzbGFuZCBFY29sb2d5LkpQRyIsImlhdCI6MTc3MjMxOTU4OCwiZXhwIjoxODAzODU1NTg4fQ.qAcF_l74get0ZpvOQOf7TcZts6SN6hTtQQM9mo2-vEM" alt="Publikim 1">
+          <div class="pub-copy"><h4>Island Ecology</h4><p>Hap publikimin</p></div>
+        </a>
+
+        <a href="https://www.intechopen.com/chapters/1218612" target="_blank" class="pub-card">
+          <img src="https://fujqjgcciajwfbsvmlnk.supabase.co/storage/v1/object/sign/Media/Botimet%20Shkencore%20Kopertinat/Heritage%20Management.JPG?token=eyJraWQiOiJzdG9yYWdlLXVybC1zaWduaW5nLWtleV83MDk0YTIxNy0zZDE5LTQwNTMtYjk3Yy05ZjI0MzI1ZTkxNjciLCJhbGciOiJIUzI1NiJ9.eyJ1cmwiOiJNZWRpYS9Cb3RpbWV0IFNoa2VuY29yZSBLb3BlcnRpbmF0L0hlcml0YWdlIE1hbmFnZW1lbnQuSlBHIiwiaWF0IjoxNzcyMzE5NTQ3LCJleHAiOjE4MDM4NTU1NDd9.swDyzezu6Y-VNN44Dp_JUeWOl41UNMCmlGG0Fma-Ork" alt="Publikim 2">
+          <div class="pub-copy"><h4>Heritage Management</h4><p>Hap publikimin</p></div>
+        </a>
+
+        <a href="https://online-journals.org/index.php/i-jim/article/view/54599" target="_blank" class="pub-card">
+          <img src="https://online-journals.org/public/journals/4/cover_issue_1275_en_US.png" alt="Publikim 3">
+          <div class="pub-copy"><h4>iJIM Article</h4><p>Hap publikimin</p></div>
+        </a>
+
+        <a href="https://www.researchgate.net/publication/393674156_LUBONJA_-_NJE_KAPITULL_I_RI_NE_TRASHEGIMINE_KULTURORE_DHE_NATYRORE_SHQIPTARE?channel=doi&linkId=687540da3c12dc437a3eb078&showFulltext=true" target="_blank" class="pub-card">
+          <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTTn5tXM0v-m4XJ9LhSS171CVOkDlhB0ZqtVA&s" alt="Publikim 4">
+          <div class="pub-copy"><h4>Lubonja</h4><p>Hap publikimin</p></div>
+        </a>
+      </div>
+    </div>
+  </div>
+
+  <div id="network-modal" class="modal">
+    <div class="modal-panel">
+      <div class="modal-head">
+        <div>
+          <div class="kicker">Prezenca Dixhitale</div>
+          <h3>Rrjeti Profesional</h3>
+        </div>
+        <button class="modal-close" data-close="network-modal">Mbyll</button>
+      </div>
+
+      <div class="network-grid">
+        <a href="https://www.linkedin.com/in/erland-alla/" target="_blank" class="network-card">
+          <div>
+            <svg fill="#0077b5" viewBox="0 0 24 24">
+              <path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"/>
+            </svg>
+            <h4>LinkedIn</h4>
+          </div>
+          <span>linkedin.com</span>
+        </a>
+
+        <a href="https://www.researchgate.net/profile/Erland-Alla" target="_blank" class="network-card">
+          <div>
+            <img src="https://c5.rgstatic.net/m/32868743212969/images/template/rg_logo_square_brand.png" alt="ResearchGate">
+            <h4>ResearchGate</h4>
+          </div>
+          <span>researchgate.net</span>
+        </a>
+
+        <a href="https://scholar.google.com/citations?user=8HofjlEAAAAJ&hl=en" target="_blank" class="network-card">
+          <div>
+            <img src="https://scholar.google.com/intl/en/scholar/images/2x/scholar_logo_64dp.png" alt="Google Scholar">
+            <h4>Google Scholar</h4>
+          </div>
+          <span>scholar.google.com</span>
+        </a>
+
+        <a href="https://orcid.org/0009-0008-5121-7564" target="_blank" class="network-card">
+          <div>
+            <img src="https://orcid.org/assets/vectors/orcid.logo.svg" alt="ORCID">
+            <h4>ORCID iD</h4>
+          </div>
+          <span>orcid.org</span>
+        </a>
+      </div>
+    </div>
+  </div>
+
+  <div id="cv-modal" class="modal">
+    <div class="modal-panel" style="width:min(1000px,100%);">
+      <div class="modal-head">
+        <div>
+          <div class="kicker">Curriculum Vitae</div>
+          <h3>Erland Alla</h3>
+        </div>
+        <button class="modal-close" data-close="cv-modal">Mbyll</button>
+      </div>
+
+      <iframe
+        class="cv-frame"
+        src="https://fujqjgcciajwfbsvmlnk.supabase.co/storage/v1/object/public/lindimaps-academy/qgis/1_intro.pdf#toolbar=0&navpanes=0&scrollbar=1">
+      </iframe>
+    </div>
+  </div>
+
+  <button id="scroll-to-top" class="scroll-top" aria-label="Kthehu lart">
+    <svg width="22" height="22" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.6" d="M5 15l7-7 7 7"/>
+    </svg>
+  </button>
+
+  <script src="../../assets/js/cassio-lindimaps.js"></script>
+
+  <script>
+    const scrollTopBtn = document.getElementById('scroll-to-top');
+
+    window.addEventListener('scroll', () => {
+      if (window.scrollY > 400) {
+        scrollTopBtn.classList.add('show');
+      } else {
+        scrollTopBtn.classList.remove('show');
+      }
+    });
+
+    scrollTopBtn.addEventListener('click', () => {
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    });
+
+    const openModal = (id) => {
+      const modal = document.getElementById(id);
+      if (!modal) return;
+      modal.classList.add('show');
+      document.body.style.overflow = 'hidden';
+    };
+
+    const closeModal = (id) => {
+      const modal = document.getElementById(id);
+      if (!modal) return;
+      modal.classList.remove('show');
+      document.body.style.overflow = '';
+    };
+
+    document.getElementById('co-author-trigger')?.addEventListener('click', () => openModal('publications-modal'));
+    document.getElementById('network-trigger')?.addEventListener('click', () => openModal('network-modal'));
+    document.getElementById('cv-trigger')?.addEventListener('click', () => openModal('cv-modal'));
+
+    document.querySelectorAll('[data-close]').forEach(btn => {
+      btn.addEventListener('click', () => closeModal(btn.dataset.close));
+    });
+
+    document.querySelectorAll('.modal').forEach(modal => {
+      modal.addEventListener('click', (e) => {
+        if (e.target === modal) {
+          modal.classList.remove('show');
+          document.body.style.overflow = '';
+        }
+      });
+    });
+
+    document.addEventListener('keydown', (e) => {
+      if (e.key === 'Escape') {
+        document.querySelectorAll('.modal.show').forEach(modal => modal.classList.remove('show'));
+        document.body.style.overflow = '';
+      }
+    });
+  </script>
+</body>
+</html>
