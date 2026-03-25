@@ -332,6 +332,67 @@
         </div>
     </section>
 
+     <!-- SEKSIONI AKTIVITETE -->
+    <section class="py-20 bg-white border-y border-slate-100">
+        <div class="max-w-7xl mx-auto px-6">
+            <div class="text-center mb-16">
+                <span class="text-blue-600 font-black text-xs uppercase tracking-[0.3em] mb-4 block">LinkedIn Update</span>
+                <h3 class="text-3xl md:text-5xl font-black text-slate-900 uppercase tracking-tighter">Aktivitete</h3>
+                <div class="h-1.5 w-20 bg-blue-600 mx-auto rounded-full mt-4"></div>
+            </div>
+
+            <div class="activities-slider-container">
+                <button id="act-prev" class="nav-btn prev">
+                    <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="3" d="M15 19l-7-7 7-7"/></svg>
+                </button>
+                <button id="act-next" class="nav-btn next">
+                    <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="3" d="M9 5l7 7-7 7"/></svg>
+                </button>
+                
+                <div id="act-track" class="activities-track">
+                    <div class="activity-card">
+                        <iframe src="https://www.linkedin.com/embed/feed/update/urn:li:ugcPost:7440024131687026689?collapsed=1" height="551" width="100%" frameborder="0" allowfullscreen="" title="Post 1"></iframe>
+                    </div>
+                    <div class="activity-card">
+                        <iframe src="https://www.linkedin.com/embed/feed/update/urn:li:share:7436482340131962880?collapsed=1" height="719" width="100%" frameborder="0" allowfullscreen="" title="Post 2"></iframe>
+                    </div>
+                    <div class="activity-card">
+                        <iframe src="https://www.linkedin.com/embed/feed/update/urn:li:ugcPost:7405023135160410113?collapsed=1" height="877" width="100%" frameborder="0" allowfullscreen="" title="Post 3"></iframe>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+       <section class="py-24 bg-white">
+        <div class="max-w-7xl mx-auto px-6">
+            <div class="text-center mb-20">
+                <span class="text-blue-600 font-black text-xs uppercase tracking-[0.3em] mb-4 block">Udhëtimi ynë</span>
+                <h3 class="text-3xl md:text-5xl font-black text-slate-900 uppercase tracking-tighter mb-4">Historia Jonë</h3>
+                <div class="h-1.5 w-20 bg-blue-600 mx-auto rounded-full"></div>
+            </div>
+
+            <div class="timeline-container space-y-12">
+                <div class="relative flex items-center justify-between md:flex-row-reverse w-full">
+                    <div class="hidden md:block w-5/12"></div>
+                    <div class="z-20 flex items-center justify-center bg-blue-600 w-10 h-10 rounded-full shadow-xl border-4 border-white"><span class="text-white text-[10px] font-bold">2024</span></div>
+                    <div class="w-full md:w-5/12 bg-slate-50 p-8 rounded-3xl border border-slate-100 hover:shadow-lg transition-shadow">
+                        <h4 class="text-xl font-black text-slate-900 mb-2 uppercase">Fillimet</h4>
+                        <p class="text-slate-600 text-sm leading-relaxed">Fillimi i konceptit të një platforme që pasqyron pasionin dhe përvojën time në fushën e Gjeoinformacionit (GIS)</p>
+                    </div>
+                </div>
+                <div class="relative flex items-center justify-between w-full">
+                    <div class="hidden md:block w-5/12"></div>
+                    <div class="z-20 flex items-center justify-center bg-slate-900 w-10 h-10 rounded-full shadow-xl border-4 border-white"><span class="text-white text-[10px] font-bold">2025</span></div>
+                    <div class="w-full md:w-5/12 bg-slate-50 p-8 rounded-3xl border border-slate-100 hover:shadow-lg transition-shadow">
+                        <h4 class="text-xl font-black text-slate-900 mb-2 uppercase text-right md:text-left">Zgjerimi</h4>
+                        <p class="text-slate-600 text-sm leading-relaxed text-right md:text-left">Integrimi i teknologjije GIS dhe Remote Sensing në bashkëpunimet e para me sektorin publik.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
     <!-- Historia Section -->
     <section class="py-24 bg-white border-y border-slate-100">
         <div class="max-w-7xl mx-auto px-6">
@@ -598,7 +659,36 @@
     <button id="scroll-to-top" class="fixed bottom-8 right-8 bg-blue-600 text-white p-5 rounded-2xl shadow-2xl hover:bg-blue-700 transition-all z-[1100] group">
         <svg class="w-6 h-6 transform group-hover:-translate-y-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="4" d="M5 15l7-7 7 7"></path></svg>
     </button>
+    
+<script>
+        // Logjika e Slider-it Aktivitete
+        const track = document.getElementById('act-track');
+        const next = document.getElementById('act-next');
+        const prev = document.getElementById('act-prev');
+        const cards = document.querySelectorAll('.activity-card');
+        let currentIdx = 0;
 
+        function updateSlider() {
+            const width = cards[0].offsetWidth + 20;
+            track.style.transform = `translateX(-${currentIdx * width}px)`;
+        }
+
+        next.onclick = () => {
+            const visible = window.innerWidth >= 1024 ? 3 : (window.innerWidth >= 768 ? 2 : 1);
+            if (currentIdx < cards.length - visible) {
+                currentIdx++;
+                updateSlider();
+            }
+        };
+
+        prev.onclick = () => {
+            if (currentIdx > 0) {
+                currentIdx--;
+                updateSlider();
+            }
+        };
+
+        window.onresize = updateSlider;
     <script>
         const menuBtn = document.getElementById('menu-btn');
         const mobileMenu = document.getElementById('mobile-menu');
