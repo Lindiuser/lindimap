@@ -1,0 +1,231 @@
+<!DOCTYPE html>
+<html lang="sq">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Udhëtimi në Romë</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,700;1,700&family=Inter:wght@400;600;800&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+            scroll-behavior: smooth;
+        }
+        .serif {
+            font-family: 'Playfair Display', serif;
+        }
+        .hero-section {
+            background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.8)), url('https://images.unsplash.com/photo-1552832230-c0197dd311b5?q=80&w=1920&auto=format&fit=crop');
+            background-size: cover;
+            background-position: center;
+        }
+        .destination-card {
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+        .destination-card:hover {
+            transform: translateY(-5px);
+        }
+        #notification {
+            display: none;
+            position: fixed;
+            top: 20px;
+            right: 20px;
+            z-index: 9999;
+            padding: 1rem 1.5rem;
+            border-radius: 12px;
+            color: white;
+            font-weight: 600;
+            box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.2);
+            animation: slideIn 0.3s ease-out;
+        }
+        @keyframes slideIn { from { transform: translateX(100%); opacity: 0; } to { transform: translateX(0); opacity: 1; } }
+        
+        .upload-loading {
+            animation: pulse 1.5s infinite;
+            pointer-events: none;
+            opacity: 0.6;
+        }
+        @keyframes pulse { 0% { opacity: 0.6; } 50% { opacity: 0.3; } 100% { opacity: 0.6; } }
+    </style>
+</head>
+<body class="bg-slate-50 text-slate-900 overflow-x-hidden">
+
+    <div id="notification"></div>
+
+    <header class="hero-section h-screen flex flex-col items-center justify-center text-center px-4 relative">
+        <div class="absolute top-8 left-0 right-0 flex justify-center space-x-8 text-white/80 font-semibold tracking-widest text-sm uppercase">
+            <span>Rruga</span>
+            <span>Historia</span>
+            <span>Aventura</span>
+        </div>
+        
+        <h1 class="serif italic text-7xl md:text-9xl text-white mb-6 drop-shadow-2xl">Roma</h1>
+        <p class="text-amber-400 text-xl md:text-2xl font-light tracking-[0.3em] uppercase mb-12">Udhëtimi i A&A</p>
+        
+        <a href="#itinerari" class="bg-white/10 backdrop-blur-md border border-white/20 text-white px-10 py-4 rounded-full font-bold hover:bg-white hover:text-slate-900 transition-all duration-300">
+            SHIKO ITINERARIN
+        </a>
+
+        <div class="absolute bottom-10 animate-bounce">
+            <i class="fas fa-chevron-down text-white text-2xl opacity-50"></i>
+        </div>
+    </header>
+
+    <main class="max-w-6xl mx-auto py-24 px-4" id="itinerari">
+        <div class="flex items-center space-x-4 mb-16 overflow-hidden">
+            <div class="h-px bg-slate-300 w-24"></div>
+            <h2 class="serif italic text-4xl md:text-5xl text-slate-800 shrink-0">Itinerari ditor</h2>
+        </div>
+
+        <div class="space-y-32">
+            <!-- Pika 1 -->
+            <div class="destination-card bg-white rounded-[2rem] shadow-2xl overflow-hidden border border-slate-100 group">
+                <div class="flex flex-col md:flex-row">
+                    <div class="md:w-1/2 relative h-[400px] md:h-auto overflow-hidden">
+                        <img src="https://images.unsplash.com/photo-1542820229-081e0c12af0b?q=80&w=1000&auto=format&fit=crop" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700">
+                        <div class="absolute top-6 left-6 bg-white/90 backdrop-blur px-6 py-2 rounded-full shadow-lg">
+                            <span class="text-slate-900 font-extrabold text-sm tracking-tighter">01. 09:30 AM</span>
+                        </div>
+                    </div>
+                    <div class="md:w-1/2 p-8 md:p-14 flex flex-col justify-between">
+                        <div>
+                            <h3 class="serif text-4xl mb-6 text-slate-800">Vatikani & Shën Pjetri</h3>
+                            <p class="text-slate-500 text-lg leading-relaxed mb-8">Nisja e ditës në zemër të artit. Kapela Sistine ju pret.</p>
+                            
+                            <div class="upload-container mb-6 p-4 bg-slate-50 rounded-2xl border-2 border-dashed border-slate-200 hover:border-amber-400 transition-colors">
+                                <label class="flex flex-col items-center justify-center cursor-pointer space-y-2 text-slate-500 hover:text-amber-600">
+                                    <i class="fas fa-cloud-upload-alt text-2xl"></i>
+                                    <span class="text-xs font-bold uppercase tracking-wider">Kujtim nga Vatikani</span>
+                                    <input type="file" class="hidden" accept="image/*" onchange="uploadToSupabase(this, 'Vatikani')">
+                                </label>
+                            </div>
+                        </div>
+                        <a href="https://www.google.com/maps/dir/?api=1&destination=Vatican+Museums" target="_blank" class="bg-slate-900 text-white py-4 rounded-xl font-bold text-center hover:bg-slate-800 transition-colors">HAP HARTËN</a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Pika 2 -->
+            <div class="destination-card bg-white rounded-[2rem] shadow-2xl overflow-hidden border border-slate-100 group">
+                <div class="flex flex-col md:flex-row-reverse">
+                    <div class="md:w-1/2 relative h-[400px] md:h-auto overflow-hidden">
+                        <img src="https://images.unsplash.com/photo-1529260830199-42c24126f198?q=80&w=1000&auto=format&fit=crop" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700">
+                        <div class="absolute top-6 right-6 bg-white/90 backdrop-blur px-6 py-2 rounded-full shadow-lg">
+                            <span class="text-slate-900 font-extrabold text-sm tracking-tighter">02. 12:30 PM</span>
+                        </div>
+                    </div>
+                    <div class="md:w-1/2 p-8 md:p-14 flex flex-col justify-between">
+                        <div>
+                            <h3 class="serif text-4xl mb-6 text-slate-800">Castel Sant'Angelo</h3>
+                            <p class="text-slate-500 text-lg leading-relaxed mb-8">Ura e Engjëjve dhe historia e fshehur e kështjellës.</p>
+                            
+                            <div class="upload-container mb-6 p-4 bg-slate-50 rounded-2xl border-2 border-dashed border-slate-200 hover:border-amber-400 transition-colors">
+                                <label class="flex flex-col items-center justify-center cursor-pointer space-y-2 text-slate-500 hover:text-amber-600">
+                                    <i class="fas fa-camera-retro text-2xl"></i>
+                                    <span class="text-xs font-bold uppercase tracking-wider">Foto te Castel</span>
+                                    <input type="file" class="hidden" accept="image/*" onchange="uploadToSupabase(this, 'Castel')">
+                                </label>
+                            </div>
+                        </div>
+                        <a href="https://www.google.com/maps/dir/?api=1&destination=Castel+Sant'Angelo" target="_blank" class="bg-emerald-600 text-white py-4 rounded-xl font-bold text-center hover:bg-emerald-700 transition-colors">HAP HARTËN</a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Mund të shtohen pikat e tjera me të njëjtën strukturë -->
+        </div>
+    </main>
+
+    <footer class="bg-slate-900 text-white py-20 px-4 text-center">
+        <div class="serif italic text-4xl mb-8 text-amber-500 underline underline-offset-8">A&A</div>
+        <p class="text-slate-400 text-lg">Udhëtim të mbarë në Romë!</p>
+    </footer>
+
+    <button id="backToTop" class="fixed bottom-8 right-8 bg-amber-500 text-white w-12 h-12 rounded-full shadow-2xl hidden items-center justify-center hover:scale-110 z-50">
+        <i class="fas fa-arrow-up"></i>
+    </button>
+
+    <script>
+        const SUPABASE_URL = "https://nbqsxonhscsyvyhldqkt.supabase.co";
+        // Kujdes: Ky Key eshte Anon Key. Duhet RLS policy ne Supabase Dashboard per te lejuar upload.
+        const SUPABASE_KEY = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6Im5icXN4b25oc2NzeXZ5aGxkcWt0Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NzQ1Mjc2MzQsImV4cCI6MjA5MDEwMzYzNH0.fcNq-dOuR6wCHQqxTsCufSdLRK5t4dlzEkiREOCWKNE";
+        const BUCKET_NAME = "images";
+
+        function showNotification(message, isError = false) {
+            const el = document.getElementById('notification');
+            el.textContent = message;
+            el.style.backgroundColor = isError ? '#ef4444' : '#10b981';
+            el.style.display = 'block';
+            setTimeout(() => { el.style.display = 'none'; }, 5000);
+        }
+
+        async function uploadToSupabase(input, destination) {
+            const file = input.files[0];
+            if (!file) return;
+
+            // Kontrolli i madhesisë (p.sh. max 5MB)
+            if (file.size > 5 * 1024 * 1024) {
+                showNotification("Skedari është shumë i madh (Max 5MB)", true);
+                return;
+            }
+
+            const container = input.closest('.upload-container');
+            container.classList.add('upload-loading');
+            showNotification("Duke u lidhur me serverin...");
+
+            try {
+                const cleanDest = destination.replace(/[^a-z0-9]/gi, '_').toLowerCase();
+                const timestamp = Date.now();
+                const fileExt = file.name.split('.').pop();
+                const fileName = `${cleanDest}_${timestamp}.${fileExt}`;
+
+                // Kërkesa PUT është shpesh më e mirë për storage
+                const response = await fetch(`${SUPABASE_URL}/storage/v1/object/${BUCKET_NAME}/${fileName}`, {
+                    method: 'POST',
+                    headers: { 
+                        'Authorization': `Bearer ${SUPABASE_KEY}`, 
+                        'apikey': SUPABASE_KEY,
+                        'x-upsert': 'true'
+                    },
+                    body: file
+                });
+
+                const result = await response.json();
+
+                if (response.ok) {
+                    showNotification("Sukses! Fotoja u ruajt.");
+                    container.style.borderColor = "#10b981";
+                    container.style.backgroundColor = "#f0fdf4";
+                    console.log("URL e aksesueshme:", `${SUPABASE_URL}/storage/v1/object/public/${BUCKET_NAME}/${fileName}`);
+                } else {
+                    if (result.error === "new row violates row-level security policy") {
+                        showNotification("Gabim RLS: Shko te Supabase Storage -> Policies dhe lejo INSERT për 'anon'.", true);
+                    } else {
+                        showNotification(`Gabim: ${result.message || result.error}`, true);
+                    }
+                    console.error("Supabase Error Full:", result);
+                }
+            } catch (err) {
+                showNotification("Gabim rrjeti. Kontrollo lidhjen.", true);
+                console.error("Network Error:", err);
+            } finally {
+                container.classList.remove('upload-loading');
+                input.value = "";
+            }
+        }
+
+        const backToTopBtn = document.getElementById("backToTop");
+        window.onscroll = function() {
+            if (document.body.scrollTop > 500 || document.documentElement.scrollTop > 500) {
+                backToTopBtn.style.display = "flex";
+            } else {
+                backToTopBtn.style.display = "none";
+            }
+        };
+        backToTopBtn.onclick = function() {
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        };
+    </script>
+</body>
+</html>
