@@ -45,6 +45,9 @@
                 height: 14rem; /* Slightly shorter on small screens */
             }
         }
+        .info-tag {
+            @apply flex items-center gap-2 text-xs font-semibold py-1 px-3 rounded-full mb-2;
+        }
     </style>
 </head>
 <body class="bg-slate-50 text-slate-900">
@@ -80,8 +83,16 @@
                             <img src="https://cdnimpuls.com/voxnews.al/media3/-640-0-koloseu-1664905387.jpeg" class="w-full h-full object-cover card-img-hover" alt="Koloseu">
                         </div>
                         <div class="p-8">
+                            <div class="flex flex-wrap gap-2 mb-4">
+                                <span class="info-tag bg-amber-100 text-amber-800"><i class="fas fa-clock"></i> Ora më e mirë: 08:30</span>
+                                <span class="info-tag bg-blue-100 text-blue-800"><i class="fas fa-book-open"></i> Ndërtuar në vitin 80 m.K.</span>
+                            </div>
                             <h3 class="text-2xl font-bold mb-2">Koloseu</h3>
-                            <p class="text-slate-600 mb-6 italic">Amfiteatri më i madh në botë. Fillimi perfekt i aventurës tuaj.</p>
+                            <p class="text-slate-600 mb-4 italic">Amfiteatri më i madh në botë. Pak histori: Këtu zhvilloheshin luftimet e gladiatorëve para 50,000 spektatorëve.</p>
+                            <div class="bg-slate-50 p-4 rounded-xl mb-6 border-l-4 border-amber-500">
+                                <p class="text-sm font-bold text-slate-700"><i class="fas fa-utensils mr-2"></i>Ku të hani:</p>
+                                <p class="text-sm text-slate-600">"Hostaria al Gladiatore" - Dreka me pamje nga muret e lashta.</p>
+                            </div>
                             <a href="https://www.google.com/maps/dir/?api=1&destination=Colosseum" target="_blank" class="flex items-center justify-center w-full bg-slate-900 text-white py-4 rounded-xl font-bold hover:bg-amber-600 transition-colors shadow-lg">
                                 <i class="fas fa-location-arrow mr-2"></i> NIS UDHËTIMIN KËTU
                             </a>
@@ -98,8 +109,12 @@
                             <img src="https://selectitaly.com/blog/wp-content/uploads/2016/02/Colosseum-Forum-Tour-View-from-top-tier.jpg" class="w-full h-full object-cover card-img-hover" alt="Forumi Romak">
                         </div>
                         <div class="p-8">
+                            <div class="flex flex-wrap gap-2 mb-4">
+                                <span class="info-tag bg-amber-100 text-amber-800"><i class="fas fa-sun"></i> Vizitoni para orës 11:00</span>
+                                <span class="info-tag bg-emerald-100 text-emerald-800"><i class="fas fa-landmark"></i> Zemra e Perandorisë</span>
+                            </div>
                             <h3 class="text-2xl font-bold mb-2">Forumi Romak & Palatine</h3>
-                            <p class="text-slate-600 mb-6 italic">Shëtitje mes tempujve dhe mbetjeve të Perandorisë.</p>
+                            <p class="text-slate-600 mb-4 italic">Zemra politike dhe tregtare e Romës së lashtë. Këtu ndodhen mbetjet e tempujve më të rëndësishëm të historisë.</p>
                             <a href="https://www.google.com/maps/dir/?api=1&origin=Colosseum&destination=Roman+Forum" target="_blank" class="flex items-center justify-center w-full bg-amber-600 text-white py-4 rounded-xl font-bold hover:bg-amber-700 transition-colors shadow-lg">
                                 <i class="fas fa-walking mr-2"></i> NGA KOLOSEU TE FORUMI
                             </a>
@@ -116,8 +131,12 @@
                             <img src="https://www.italia.it/content/dam/tdh/en/destinations/lazio/roma/piazza-venezia/media/20220426095201-piazza-venezia-roma-lazio-shutterstock-340381193.jpg" class="w-full h-full object-cover card-img-hover" alt="Piazza Venezia">
                         </div>
                         <div class="p-8">
+                            <div class="flex flex-wrap gap-2 mb-4">
+                                <span class="info-tag bg-slate-100 text-slate-800"><i class="fas fa-arrow-up"></i> Ngjituni në tarracë</span>
+                                <span class="info-tag bg-red-100 text-red-800"><i class="fas fa-monument"></i> Altare della Patria</span>
+                            </div>
                             <h3 class="text-2xl font-bold mb-2">Piazza Venezia</h3>
-                            <p class="text-slate-600 mb-6 italic">Vendi ku historia e lashtë takohet me epokën moderne.</p>
+                            <p class="text-slate-600 mb-4 italic">Vendi ku historia e lashtë takohet me epokën moderne. Monumenti i bardhë gjigand i kushtohet mbretit të parë të Italisë së bashkuar.</p>
                             <a href="https://www.google.com/maps/dir/?api=1&origin=Roman+Forum&destination=Piazza+Venezia" target="_blank" class="flex items-center justify-center w-full bg-amber-600 text-white py-4 rounded-xl font-bold hover:bg-amber-700 transition-colors shadow-lg">
                                 <i class="fas fa-walking mr-2"></i> NGA FORUMI TE SHESHI
                             </a>
@@ -133,8 +152,16 @@
                             <img src="https://upload.wikimedia.org/wikipedia/commons/a/a2/Teatro_di_Marcello_intero.jpg" class="w-full h-full object-cover card-img-hover" alt="Teatro di Marcello">
                         </div>
                         <div class="p-8">
+                            <div class="flex flex-wrap gap-2 mb-4">
+                                <span class="info-tag bg-amber-100 text-amber-800"><i class="fas fa-moon"></i> Bukur në mbrëmje</span>
+                                <span class="info-tag bg-purple-100 text-purple-800"><i class="fas fa-mask"></i> 13 para Krishtit</span>
+                            </div>
                             <h3 class="text-2xl font-bold mb-2">Teatro di Marcello</h3>
-                            <p class="text-slate-600 mb-6 italic">Një nga teatrot më të vjetër të ruajtur në Romë.</p>
+                            <p class="text-slate-600 mb-4 italic">Shpesh i ngatërruar me Koloseun, ky teatër shërbeu si model arkitekturor për të. Është një xhevahir i fshehur.</p>
+                            <div class="bg-slate-50 p-4 rounded-xl mb-6 border-l-4 border-emerald-500">
+                                <p class="text-sm font-bold text-slate-700"><i class="fas fa-pizza-slice mr-2"></i>Ku të hani (Darka):</p>
+                                <p class="text-sm text-slate-600">"Ba'Ghetto" në lagjen Hebraike përreth - Provoni 'Artichokes' (kartofa) tradicionale.</p>
+                            </div>
                             <a href="https://www.google.com/maps/dir/?api=1&origin=Piazza+Venezia&destination=Teatro+di+Marcello" target="_blank" class="flex items-center justify-center w-full bg-amber-600 text-white py-4 rounded-xl font-bold hover:bg-amber-700 transition-colors shadow-lg">
                                 <i class="fas fa-walking mr-2"></i> MBYLL DITËN ANTIKE KËTU
                             </a>
@@ -160,8 +187,12 @@
                             <img src="https://images.unsplash.com/photo-1525874684015-58379d421a52?auto=format&fit=crop&w=1000&q=80" class="w-full h-full object-cover card-img-hover" alt="Trevi">
                         </div>
                         <div class="p-8">
+                            <div class="flex flex-wrap gap-2 mb-4">
+                                <span class="info-tag bg-blue-100 text-blue-800"><i class="fas fa-clock"></i> Para orës 08:00 (Pa njerëz)</span>
+                                <span class="info-tag bg-amber-100 text-amber-800"><i class="fas fa-coins"></i> Hidhi 2 monedha</span>
+                            </div>
                             <h3 class="text-2xl font-bold mb-2">Fontana di Trevi</h3>
-                            <p class="text-slate-600 mb-6 italic">Mëngjes magjik pranë fontanës më të famshme në botë.</p>
+                            <p class="text-slate-600 mb-4 italic">Kryevepra e Nicola Salvi. Legjenda thotë: Një monedhë për t'u kthyer në Romë, dy për dashuri.</p>
                             <a href="https://www.google.com/maps/dir/?api=1&destination=Trevi+Fountain" target="_blank" class="flex items-center justify-center w-full bg-slate-900 text-white py-4 rounded-xl font-bold hover:bg-blue-600 transition-colors shadow-lg">
                                 <i class="fas fa-location-arrow mr-2"></i> NIS DITËN TE FONTANA
                             </a>
@@ -178,8 +209,16 @@
                             <img src="https://monitor.al/wp-content/uploads/2024/08/Panteoni-Rome-4-scaled-1-1024x576.jpg" class="w-full h-full object-cover card-img-hover" alt="Pantheon">
                         </div>
                         <div class="p-8">
+                            <div class="flex flex-wrap gap-2 mb-4">
+                                <span class="info-tag bg-amber-100 text-amber-800"><i class="fas fa-sun"></i> Ora 12:00 (Drita perfekte)</span>
+                                <span class="info-tag bg-slate-100 text-slate-800"><i class="fas fa-university"></i> Tempulli i Perëndive</span>
+                            </div>
                             <h3 class="text-2xl font-bold mb-2">Panteoni</h3>
-                            <p class="text-slate-600 mb-6 italic">Përjetoni dritën që futet nga kupola gjigande.</p>
+                            <p class="text-slate-600 mb-4 italic">Ndërtesa më e ruajtur e Romës së lashtë. Kupola e saj me vrimë (Oculus) është një mrekulli inxhinierike.</p>
+                            <div class="bg-blue-50 p-4 rounded-xl mb-6 border-l-4 border-blue-500">
+                                <p class="text-sm font-bold text-blue-700"><i class="fas fa-ice-cream mr-2"></i>Xhelato Time:</p>
+                                <p class="text-sm text-blue-600">"Giolitti" - Vetëm 3 minuta larg. Provojni shijen e fëstëkut!</p>
+                            </div>
                             <a href="https://www.google.com/maps/dir/?api=1&origin=Trevi+Fountain&destination=Pantheon+Rome" target="_blank" class="flex items-center justify-center w-full bg-blue-600 text-white py-4 rounded-xl font-bold hover:bg-blue-700 transition-colors shadow-lg shadow-blue-100">
                                 <i class="fas fa-walking mr-2"></i> NGA TREVI TE PANTEONI
                             </a>
@@ -196,8 +235,12 @@
                             <img src="https://images.unsplash.com/photo-1520175480921-4edfa2983e0f?auto=format&fit=crop&w=1000&q=80" class="w-full h-full object-cover card-img-hover" alt="Piazza Navona">
                         </div>
                         <div class="p-8">
+                            <div class="flex flex-wrap gap-2 mb-4">
+                                <span class="info-tag bg-blue-100 text-blue-800"><i class="fas fa-coffee"></i> Pushim për Kafe</span>
+                                <span class="info-tag bg-amber-100 text-amber-800"><i class="fas fa-palette"></i> Fontana e 4 Lumenjve</span>
+                            </div>
                             <h3 class="text-2xl font-bold mb-2">Piazza Navona</h3>
-                            <p class="text-slate-600 mb-6 italic">Sheshi i artistëve dhe i tre fontanave baroke.</p>
+                            <p class="text-slate-600 mb-4 italic">Në antikitet ishte një stadium për gara atletike. Sot është shtëpia e fontanave mahnitëse të Berninit.</p>
                             <a href="https://www.google.com/maps/dir/?api=1&origin=Pantheon+Rome&destination=Piazza+Navona" target="_blank" class="flex items-center justify-center w-full bg-blue-600 text-white py-4 rounded-xl font-bold hover:bg-blue-700 transition-colors shadow-lg">
                                 <i class="fas fa-walking mr-2"></i> NGA PANTEONI TE SHESHI
                             </a>
@@ -213,8 +256,12 @@
                             <img src="https://castelsantangelorome.com/wp-content/uploads/2024/03/castel-santangelo-entrata-1024x683.webp" class="w-full h-full object-cover card-img-hover" alt="Castel Sant'Angelo">
                         </div>
                         <div class="p-8">
+                            <div class="flex flex-wrap gap-2 mb-4">
+                                <span class="info-tag bg-red-100 text-red-800"><i class="fas fa-camera"></i> Foto te Ura e Engjëjve</span>
+                                <span class="info-tag bg-blue-100 text-blue-800"><i class="fas fa-shield-alt"></i> Ish-Mausoleum</span>
+                            </div>
                             <h3 class="text-2xl font-bold mb-2">Castel Sant'Angelo</h3>
-                            <p class="text-slate-600 mb-6 italic">Kalaja e famshme që lidhet me Vatikanin përmes "Passetto".</p>
+                            <p class="text-slate-600 mb-4 italic">Fillimisht mausoleumi i Adrianit, u bë kështjellë papnore dhe burg. Pamja nga lart mbi lumin Tiber është unike.</p>
                             <a href="https://www.google.com/maps/dir/?api=1&origin=Piazza+Navona&destination=Castel+Sant'Angelo" target="_blank" class="flex items-center justify-center w-full bg-blue-600 text-white py-4 rounded-xl font-bold hover:bg-blue-700 transition-colors shadow-lg">
                                 <i class="fas fa-walking mr-2"></i> NGA SHESHI KËTU
                             </a>
@@ -240,8 +287,12 @@
                             <img src="https://cdnimpuls.com/a2news.com/wp-content/uploads/2020/11/-1000-0-1-20.jpg" class="w-full h-full object-cover card-img-hover" alt="Vatican Museums">
                         </div>
                         <div class="p-8">
+                            <div class="flex flex-wrap gap-2 mb-4">
+                                <span class="info-tag bg-emerald-100 text-emerald-800"><i class="fas fa-ticket-alt"></i> Prisni biletat online!</span>
+                                <span class="info-tag bg-red-100 text-red-800"><i class="fas fa-user-shield"></i> Dress code: Mbuloni gjunjët</span>
+                            </div>
                             <h3 class="text-2xl font-bold mb-2">Muzetë e Vatikanit</h3>
-                            <p class="text-slate-600 mb-6 italic">Koleksionet më të rëndësishme artistike në botë.</p>
+                            <p class="text-slate-600 mb-4 italic">Shtëpia e Kapelës Sistine (Michelangelo). Pak histori: Janë muzetë me koleksionin më të madh në botë (7km korridor).</p>
                             <a href="https://www.google.com/maps/dir/?api=1&destination=Vatican+Museums" target="_blank" class="flex items-center justify-center w-full bg-slate-900 text-white py-4 rounded-xl font-bold hover:bg-emerald-600 transition-colors shadow-lg">
                                 <i class="fas fa-location-arrow mr-2"></i> NIS DITËN TE MUZETË
                             </a>
@@ -258,8 +309,12 @@
                             <img src="https://albuktv.com/wp-content/uploads/2020/05/bazilika.jpg" class="w-full h-full object-cover card-img-hover" alt="St. Peter's Basilica">
                         </div>
                         <div class="p-8">
+                            <div class="flex flex-wrap gap-2 mb-4">
+                                <span class="info-tag bg-emerald-100 text-emerald-800"><i class="fas fa-arrow-up"></i> Ngjituni te Kupola</span>
+                                <span class="info-tag bg-amber-100 text-amber-800"><i class="fas fa-star"></i> Mrekullia e Rilindjes</span>
+                            </div>
                             <h3 class="text-2xl font-bold mb-2">Bazilika e Shën Pjetrit</h3>
-                            <p class="text-slate-600 mb-6 italic">Qendra e botës katolike me arkitekturë hyjnore.</p>
+                            <p class="text-slate-600 mb-4 italic">Kisha më e madhe në botë. Brenda mund të shihni "Pieta" e Michelangelo-s dhe altarin e madh të Berninit.</p>
                             <a href="https://www.google.com/maps/dir/?api=1&origin=Vatican+Museums&destination=St.+Peter's+Basilica" target="_blank" class="flex items-center justify-center w-full bg-emerald-600 text-white py-4 rounded-xl font-bold hover:bg-emerald-700 transition-colors shadow-lg">
                                 <i class="fas fa-walking mr-2"></i> NGA MUZETË TE BAZILIKA
                             </a>
@@ -276,8 +331,12 @@
                             <img src="https://www.civitatis.com/f/italia/roma/guia/gianicolo-m.jpg" class="w-full h-full object-cover card-img-hover" alt="Janiculum View">
                         </div>
                         <div class="p-8">
-                            <h3 class="text-2xl font-bold mb-2">Pamja nga Janiculum (Gianicolo)</h3>
-                            <p class="text-slate-600 mb-6 italic">Për një pamje panoramike të të gjithë Romës në perëndim.</p>
+                            <div class="flex flex-wrap gap-2 mb-4">
+                                <span class="info-tag bg-emerald-100 text-emerald-800"><i class="fas fa-magic"></i> Perëndimi (Sunset)</span>
+                                <span class="info-tag bg-blue-100 text-blue-800"><i class="fas fa-binoculars"></i> Pamje 360 shkallë</span>
+                            </div>
+                            <h3 class="text-2xl font-bold mb-2">Janiculum (Gianicolo)</h3>
+                            <p class="text-slate-600 mb-4 italic">Vendi më romantik për të parë perëndimin e diellit mbi çatitë dhe kupolat e të gjithë qytetit.</p>
                             <a href="https://www.google.com/maps/dir/?api=1&origin=St.+Peter's+Basilica&destination=Gianicolo" target="_blank" class="flex items-center justify-center w-full bg-emerald-600 text-white py-4 rounded-xl font-bold hover:bg-emerald-700 transition-colors shadow-lg shadow-emerald-100">
                                 <i class="fas fa-route mr-2"></i> NGA BAZILIKA TE PANORAMA
                             </a>
@@ -293,8 +352,16 @@
                             <img src="https://romesite.com/images/rome_trastevere.webp" class="w-full h-full object-cover card-img-hover" alt="Trastevere Night">
                         </div>
                         <div class="p-8">
+                            <div class="flex flex-wrap gap-2 mb-4">
+                                <span class="info-tag bg-emerald-100 text-emerald-800"><i class="fas fa-wine-glass-alt"></i> Atmosferë boheme</span>
+                                <span class="info-tag bg-red-100 text-red-800"><i class="fas fa-heart"></i> Shpirti i Romës</span>
+                            </div>
                             <h3 class="text-2xl font-bold mb-2">Lagja Trastevere</h3>
-                            <p class="text-slate-600 mb-6 italic">Mbylleni udhëtimin me një darkë tradicionale dhe atmosferë magjike.</p>
+                            <p class="text-slate-600 mb-4 italic">Lagja më autentike. Pak histori: Ishte dikur lagja e klasës punëtore, sot është qendra e jetës së natës dhe ushqimit të mirë.</p>
+                            <div class="bg-emerald-50 p-4 rounded-xl mb-6 border-l-4 border-emerald-500">
+                                <p class="text-sm font-bold text-emerald-700"><i class="fas fa-utensils mr-2"></i>Ku të hani (Darka Finale):</p>
+                                <p class="text-sm text-emerald-600">"Tonnarello" ose "Nannarella" - Provoni 'Carbonara' ose 'Cacio e Pepe' më të mirë në botë.</p>
+                            </div>
                             <a href="https://www.google.com/maps/dir/?api=1&origin=Gianicolo&destination=Trastevere+Rome" target="_blank" class="flex items-center justify-center w-full bg-emerald-600 text-white py-4 rounded-xl font-bold hover:bg-emerald-700 transition-colors shadow-lg">
                                 <i class="fas fa-utensils mr-2"></i> NGA KODRA TE DARKA FINALE
                             </a>
@@ -308,7 +375,7 @@
     <footer class="bg-slate-900 text-white py-20 px-4 text-center">
         <div class="serif italic text-4xl mb-8 text-amber-500 underline underline-offset-8">Arlind & Arjola</div>
         <div class="max-w-2xl mx-auto">
-            <p class="text-slate-400 text-lg leading-relaxed mb-8">Ky udhëzues interaktiv u plotësua me të gjitha fotot tuaja të zgjedhura. Shijoni çdo moment të këtij udhëtimi të mrekullueshëm!</p>
+            <p class="text-slate-400 text-lg leading-relaxed mb-8">Udhëzuesi u përditësua me oraret më të mira dhe sugjerimet e restoranteve më ikonike. Shijoni çdo kafshatë dhe çdo pamje në Romë!</p>
             <div class="flex justify-center space-x-6 text-2xl">
                 <i class="fas fa-camera text-amber-500/50"></i>
                 <i class="fas fa-heart text-amber-500/50"></i>
