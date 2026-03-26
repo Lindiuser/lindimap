@@ -16,7 +16,7 @@
             font-family: 'Playfair Display', serif;
         }
         .hero-section {
-            background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.7)), url('https://images.unsplash.com/photo-1552832230-c0197dd311b5?ixlib=rb-1.2.1&auto=format&fit=crop&w=1600&q=80');
+            background: linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.7)), url('https://images.unsplash.com/photo-1552432552-06c098923055?ixlib=rb-1.2.1&auto=format&fit=crop&w=1600&q=80');
             background-size: cover;
             background-position: center;
             background-attachment: fixed;
@@ -40,38 +40,38 @@
 <body class="bg-slate-50 text-slate-900">
 
     <!-- Header -->
-    <header class="hero-section h-[60vh] flex flex-col justify-center items-center text-center text-white px-4">
-        <div class="bg-black/30 p-8 rounded-2xl backdrop-blur-sm border border-white/20">
-            <h1 class="text-4xl md:text-6xl font-black mb-2 serif italic tracking-wide">Udhëtimi i Arlindit & Arjolës</h1>
-            <div class="h-1 w-24 bg-amber-500 mx-auto my-4"></div>
-            <p class="text-xl opacity-90 max-w-xl font-light">Eksplorimi i Qytetit të Përjetshëm në 3 Ditë</p>
+    <header class="hero-section h-[70vh] flex flex-col justify-center items-center text-center text-white px-4">
+        <div class="bg-black/20 p-8 rounded-2xl backdrop-blur-md border border-white/20 shadow-2xl">
+            <h1 class="text-5xl md:text-7xl font-black mb-2 serif italic tracking-wide">Udhëtimi i Arlindit & Arjolës</h1>
+            <div class="h-1.5 w-32 bg-amber-500 mx-auto my-6 rounded-full"></div>
+            <p class="text-xl md:text-2xl opacity-95 max-w-2xl font-light">Eksplorimi i Plotë i Qytetit të Përjetshëm</p>
         </div>
-        <a href="#dita1" class="mt-10 animate-bounce bg-white text-slate-900 w-12 h-12 rounded-full flex items-center justify-center shadow-lg">
-            <i class="fas fa-chevron-down"></i>
+        <a href="#dita1" class="mt-12 animate-bounce bg-white text-slate-900 w-14 h-14 rounded-full flex items-center justify-center shadow-2xl">
+            <i class="fas fa-chevron-down text-xl"></i>
         </a>
     </header>
 
     <main class="max-w-4xl mx-auto px-4 py-16">
 
-        <!-- DITA 1 -->
-        <div class="mb-20" id="dita1">
-            <h2 class="text-4xl font-black text-amber-600 mb-10 flex items-center serif">
+        <!-- DITA 1: ROMA ANTIKE -->
+        <div class="mb-24" id="dita1">
+            <h2 class="text-4xl font-black text-amber-600 mb-12 flex items-center serif">
                 <span class="bg-amber-600 text-white w-12 h-12 rounded-xl flex items-center justify-center mr-4 text-2xl shadow-lg shadow-amber-200">1</span>
-                Dita 1: Roma Antike
+                Dita 1: Gjurmët e Perandorisë
             </h2>
             
             <div class="space-y-16">
-                <!-- Vendi 1 -->
+                <!-- 1.1 Koloseu -->
                 <div class="relative pl-12 group">
                     <div class="step-line"></div>
                     <div class="absolute left-0 top-0 w-10 h-10 bg-white border-4 border-amber-600 rounded-full flex items-center justify-center font-bold text-amber-600 z-10 shadow-sm">1</div>
-                    <div class="bg-white rounded-3xl shadow-xl shadow-slate-200/50 border border-slate-100 overflow-hidden">
-                        <div class="overflow-hidden h-64">
+                    <div class="bg-white rounded-3xl shadow-xl border border-slate-100 overflow-hidden">
+                        <div class="overflow-hidden h-72">
                             <img src="https://images.unsplash.com/photo-1552432552-06c098923055?auto=format&fit=crop&w=1000&q=80" class="w-full h-full object-cover card-img-hover" alt="Koloseu">
                         </div>
                         <div class="p-8">
-                            <h3 class="text-2xl font-bold mb-2">Pika e Nisjes: Koloseu</h3>
-                            <p class="text-slate-600 mb-6 italic">Simboli i përjetshëm i Romës. Sugjerojmë të jeni këtu rreth orës 08:30.</p>
+                            <h3 class="text-2xl font-bold mb-2">Koloseu</h3>
+                            <p class="text-slate-600 mb-6 italic">Fillimi i aventurës suaj. Sugjerohet hyrja herët në mëngjes.</p>
                             <a href="https://www.google.com/maps/dir/?api=1&destination=Colosseum" target="_blank" class="flex items-center justify-center w-full bg-slate-900 text-white py-4 rounded-xl font-bold hover:bg-amber-600 transition-colors shadow-lg">
                                 <i class="fas fa-location-arrow mr-2"></i> NIS UDHËTIMIN KËTU
                             </a>
@@ -79,36 +79,54 @@
                     </div>
                 </div>
 
-                <!-- Vendi 2 -->
+                <!-- 1.2 Forumi Romak -->
                 <div class="relative pl-12 group">
                     <div class="step-line"></div>
                     <div class="absolute left-0 top-0 w-10 h-10 bg-white border-4 border-amber-600 rounded-full flex items-center justify-center font-bold text-amber-600 z-10 shadow-sm">2</div>
-                    <div class="bg-white rounded-3xl shadow-xl shadow-slate-200/50 border border-slate-100 overflow-hidden">
-                        <div class="overflow-hidden h-64">
+                    <div class="bg-white rounded-3xl shadow-xl border border-slate-100 overflow-hidden">
+                        <div class="overflow-hidden h-72">
                             <img src="https://images.unsplash.com/photo-1541079143798-d698f1ec7641?auto=format&fit=crop&w=1000&q=80" class="w-full h-full object-cover card-img-hover" alt="Forumi Romak">
                         </div>
                         <div class="p-8">
                             <h3 class="text-2xl font-bold mb-2">Forumi Romak & Palatine</h3>
-                            <p class="text-slate-600 mb-6 italic">Ecja nëpër gjurmët e perandorëve. Vetëm 5 minuta larg Koloseut.</p>
-                            <a href="https://www.google.com/maps/dir/?api=1&origin=Colosseum&destination=Roman+Forum" target="_blank" class="flex items-center justify-center w-full bg-amber-600 text-white py-4 rounded-xl font-bold hover:bg-amber-700 transition-colors shadow-lg shadow-amber-100">
+                            <p class="text-slate-600 mb-6 italic">Zemra politike e antikitetit. Vetëm pak hapa larg Koloseut.</p>
+                            <a href="https://www.google.com/maps/dir/?api=1&origin=Colosseum&destination=Roman+Forum" target="_blank" class="flex items-center justify-center w-full bg-amber-600 text-white py-4 rounded-xl font-bold hover:bg-amber-700 transition-colors shadow-lg">
                                 <i class="fas fa-walking mr-2"></i> NGA KOLOSEU TE FORUMI
                             </a>
                         </div>
                     </div>
                 </div>
 
-                <!-- Vendi 3 -->
+                <!-- 1.3 Piazza Venezia -->
                 <div class="relative pl-12 group">
+                    <div class="step-line"></div>
                     <div class="absolute left-0 top-0 w-10 h-10 bg-white border-4 border-amber-600 rounded-full flex items-center justify-center font-bold text-amber-600 z-10 shadow-sm">3</div>
-                    <div class="bg-white rounded-3xl shadow-xl shadow-slate-200/50 border border-slate-100 overflow-hidden">
-                        <div class="overflow-hidden h-64">
+                    <div class="bg-white rounded-3xl shadow-xl border border-slate-100 overflow-hidden">
+                        <div class="overflow-hidden h-72">
                             <img src="https://images.unsplash.com/photo-1590422955531-18e478546949?auto=format&fit=crop&w=1000&q=80" class="w-full h-full object-cover card-img-hover" alt="Piazza Venezia">
                         </div>
                         <div class="p-8">
                             <h3 class="text-2xl font-bold mb-2">Piazza Venezia</h3>
-                            <p class="text-slate-600 mb-6 italic">Ngjituni te "Altare della Patria" për një foto panoramike të të gjithë itinerarit të ditës.</p>
+                            <p class="text-slate-600 mb-6 italic">Pamja madhështore e monumentit Vittorio Emanuele II.</p>
                             <a href="https://www.google.com/maps/dir/?api=1&origin=Roman+Forum&destination=Piazza+Venezia" target="_blank" class="flex items-center justify-center w-full bg-amber-600 text-white py-4 rounded-xl font-bold hover:bg-amber-700 transition-colors shadow-lg">
-                                <i class="fas fa-route mr-2"></i> NGA FORUMI TE SHESHI
+                                <i class="fas fa-walking mr-2"></i> NGA FORUMI TE SHESHI
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 1.4 Teatro di Marcello -->
+                <div class="relative pl-12 group">
+                    <div class="absolute left-0 top-0 w-10 h-10 bg-white border-4 border-amber-600 rounded-full flex items-center justify-center font-bold text-amber-600 z-10 shadow-sm">4</div>
+                    <div class="bg-white rounded-3xl shadow-xl border border-slate-100 overflow-hidden">
+                        <div class="overflow-hidden h-72">
+                            <img src="https://images.unsplash.com/photo-1620833380068-07e376041793?auto=format&fit=crop&w=1000&q=80" class="w-full h-full object-cover card-img-hover" alt="Teatro di Marcello">
+                        </div>
+                        <div class="p-8">
+                            <h3 class="text-2xl font-bold mb-2">Teatro di Marcello</h3>
+                            <p class="text-slate-600 mb-6 italic">Një "mini-Kolose" më pak i zhurmshëm, perfekt për një shëtitje pasditeje.</p>
+                            <a href="https://www.google.com/maps/dir/?api=1&origin=Piazza+Venezia&destination=Teatro+di+Marcello" target="_blank" class="flex items-center justify-center w-full bg-amber-600 text-white py-4 rounded-xl font-bold hover:bg-amber-700 transition-colors shadow-lg">
+                                <i class="fas fa-walking mr-2"></i> NGA SHESHI TE TEATRI
                             </a>
                         </div>
                     </div>
@@ -116,61 +134,79 @@
             </div>
         </div>
 
-        <!-- DITA 2 -->
-        <div class="mb-20" id="dita2">
-            <h2 class="text-4xl font-black text-blue-600 mb-10 flex items-center serif">
+        <!-- DITA 2: SHPIRTI BAROK -->
+        <div class="mb-24" id="dita2">
+            <h2 class="text-4xl font-black text-blue-600 mb-12 flex items-center serif">
                 <span class="bg-blue-600 text-white w-12 h-12 rounded-xl flex items-center justify-center mr-4 text-2xl shadow-lg shadow-blue-200">2</span>
-                Dita 2: Shpirti Barok
+                Dita 2: Shesh dhe Fontanë
             </h2>
             <div class="space-y-16">
-                <!-- Vendi 1 -->
+                <!-- 2.1 Trevi -->
                 <div class="relative pl-12 group">
                     <div class="step-line"></div>
                     <div class="absolute left-0 top-0 w-10 h-10 bg-white border-4 border-blue-600 rounded-full flex items-center justify-center font-bold text-blue-600 z-10 shadow-sm">1</div>
-                    <div class="bg-white rounded-3xl shadow-xl shadow-slate-200/50 border border-slate-100 overflow-hidden">
-                        <div class="overflow-hidden h-64">
+                    <div class="bg-white rounded-3xl shadow-xl border border-slate-100 overflow-hidden">
+                        <div class="overflow-hidden h-72">
                             <img src="https://images.unsplash.com/photo-1525874684015-58379d421a52?auto=format&fit=crop&w=1000&q=80" class="w-full h-full object-cover card-img-hover" alt="Trevi">
                         </div>
                         <div class="p-8">
                             <h3 class="text-2xl font-bold mb-2">Fontana di Trevi</h3>
-                            <p class="text-slate-600 mb-6 italic">Nisja e dytë. Mos harroni të hidhni monedhën për fat!</p>
+                            <p class="text-slate-600 mb-6 italic">Nisni ditën duke hedhur monedhën tuaj të parë.</p>
                             <a href="https://www.google.com/maps/dir/?api=1&destination=Trevi+Fountain" target="_blank" class="flex items-center justify-center w-full bg-slate-900 text-white py-4 rounded-xl font-bold hover:bg-blue-600 transition-colors shadow-lg">
-                                <i class="fas fa-location-arrow mr-2"></i> SHKO TE FONTANA
+                                <i class="fas fa-location-arrow mr-2"></i> NIS DITËN TE FONTANA
                             </a>
                         </div>
                     </div>
                 </div>
 
-                <!-- Vendi 2 -->
+                <!-- 2.2 Panteoni -->
                 <div class="relative pl-12 group">
                     <div class="step-line"></div>
                     <div class="absolute left-0 top-0 w-10 h-10 bg-white border-4 border-blue-600 rounded-full flex items-center justify-center font-bold text-blue-600 z-10 shadow-sm">2</div>
-                    <div class="bg-white rounded-3xl shadow-xl shadow-slate-200/50 border border-slate-100 overflow-hidden">
-                        <div class="overflow-hidden h-64">
+                    <div class="bg-white rounded-3xl shadow-xl border border-slate-100 overflow-hidden">
+                        <div class="overflow-hidden h-72">
                             <img src="https://images.unsplash.com/photo-1515542641795-d8e88385529a?auto=format&fit=crop&w=1000&q=80" class="w-full h-full object-cover card-img-hover" alt="Pantheon">
                         </div>
                         <div class="p-8">
                             <h3 class="text-2xl font-bold mb-2">Panteoni</h3>
-                            <p class="text-slate-600 mb-6 italic">Mrekullia arkitekturore. Rruga nga Fontana është plot me dyqane akulloresh.</p>
-                            <a href="https://www.google.com/maps/dir/?api=1&origin=Trevi+Fountain&destination=Pantheon+Rome" target="_blank" class="flex items-center justify-center w-full bg-blue-600 text-white py-4 rounded-xl font-bold hover:bg-blue-700 transition-colors shadow-lg shadow-blue-100">
-                                <i class="fas fa-walking mr-2"></i> NGA TREVI TE PANTEONI
+                            <p class="text-slate-600 mb-6 italic">Ndërtesa më e mirëmbajtur e antikitetit. Hyrja është mahnitëse.</p>
+                            <a href="https://www.google.com/maps/dir/?api=1&origin=Trevi+Fountain&destination=Pantheon+Rome" target="_blank" class="flex items-center justify-center w-full bg-blue-600 text-white py-4 rounded-xl font-bold hover:bg-blue-700 transition-colors shadow-lg">
+                                <i class="fas fa-walking mr-2"></i> NGA FONTANA TE PANTEONI
                             </a>
                         </div>
                     </div>
                 </div>
 
-                <!-- Vendi 3 -->
+                <!-- 2.3 Piazza Navona -->
                 <div class="relative pl-12 group">
+                    <div class="step-line"></div>
                     <div class="absolute left-0 top-0 w-10 h-10 bg-white border-4 border-blue-600 rounded-full flex items-center justify-center font-bold text-blue-600 z-10 shadow-sm">3</div>
-                    <div class="bg-white rounded-3xl shadow-xl shadow-slate-200/50 border border-slate-100 overflow-hidden">
-                        <div class="overflow-hidden h-64">
+                    <div class="bg-white rounded-3xl shadow-xl border border-slate-100 overflow-hidden">
+                        <div class="overflow-hidden h-72">
                             <img src="https://images.unsplash.com/photo-1520175480921-4edfa2983e0f?auto=format&fit=crop&w=1000&q=80" class="w-full h-full object-cover card-img-hover" alt="Piazza Navona">
                         </div>
                         <div class="p-8">
                             <h3 class="text-2xl font-bold mb-2">Piazza Navona</h3>
-                            <p class="text-slate-600 mb-6 italic">Përfundojeni shëtitjen këtu me një "Tartufo" ose një kafe buzë fontanave.</p>
+                            <p class="text-slate-600 mb-6 italic">Tre fontana madhështore dhe atmosfera e artistëve të rrugës.</p>
                             <a href="https://www.google.com/maps/dir/?api=1&origin=Pantheon+Rome&destination=Piazza+Navona" target="_blank" class="flex items-center justify-center w-full bg-blue-600 text-white py-4 rounded-xl font-bold hover:bg-blue-700 transition-colors shadow-lg">
-                                <i class="fas fa-route mr-2"></i> NGA PANTEONI KËTU
+                                <i class="fas fa-walking mr-2"></i> NGA PANTEONI TE SHESHI
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 2.4 Castel Sant'Angelo -->
+                <div class="relative pl-12 group">
+                    <div class="absolute left-0 top-0 w-10 h-10 bg-white border-4 border-blue-600 rounded-full flex items-center justify-center font-bold text-blue-600 z-10 shadow-sm">4</div>
+                    <div class="bg-white rounded-3xl shadow-xl border border-slate-100 overflow-hidden">
+                        <div class="overflow-hidden h-72">
+                            <img src="https://images.unsplash.com/photo-1541079143798-d698f1ec7641?auto=format&fit=crop&w=1000&q=80" class="w-full h-full object-cover card-img-hover" alt="Castel Sant'Angelo">
+                        </div>
+                        <div class="p-8">
+                            <h3 class="text-2xl font-bold mb-2">Castel Sant'Angelo</h3>
+                            <p class="text-slate-600 mb-6 italic">Kala buzë lumit Tiber me ura të bukura të mbuluara me engjëj.</p>
+                            <a href="https://www.google.com/maps/dir/?api=1&origin=Piazza+Navona&destination=Castel+Sant'Angelo" target="_blank" class="flex items-center justify-center w-full bg-blue-600 text-white py-4 rounded-xl font-bold hover:bg-blue-700 transition-colors shadow-lg">
+                                <i class="fas fa-walking mr-2"></i> NGA SHESHI NAVONA KËTU
                             </a>
                         </div>
                     </div>
@@ -178,61 +214,79 @@
             </div>
         </div>
 
-        <!-- DITA 3 -->
-        <div class="mb-20" id="dita3">
-            <h2 class="text-4xl font-black text-emerald-600 mb-10 flex items-center serif">
+        <!-- DITA 3: VATIKANI & JETA E NATËS -->
+        <div class="mb-24" id="dita3">
+            <h2 class="text-4xl font-black text-emerald-600 mb-12 flex items-center serif">
                 <span class="bg-emerald-600 text-white w-12 h-12 rounded-xl flex items-center justify-center mr-4 text-2xl shadow-lg shadow-emerald-200">3</span>
-                Dita 3: Vatikani & Trastevere
+                Dita 3: Vatikani & Shpirti Romak
             </h2>
             <div class="space-y-16">
-                <!-- Vendi 1 -->
+                <!-- 3.1 Muzetë -->
                 <div class="relative pl-12 group">
                     <div class="step-line"></div>
                     <div class="absolute left-0 top-0 w-10 h-10 bg-white border-4 border-emerald-600 rounded-full flex items-center justify-center font-bold text-emerald-600 z-10 shadow-sm">1</div>
-                    <div class="bg-white rounded-3xl shadow-xl shadow-slate-200/50 border border-slate-100 overflow-hidden">
-                        <div class="overflow-hidden h-64">
+                    <div class="bg-white rounded-3xl shadow-xl border border-slate-100 overflow-hidden">
+                        <div class="overflow-hidden h-72">
                             <img src="https://images.unsplash.com/photo-1594991981392-13a195c9366c?auto=format&fit=crop&w=1000&q=80" class="w-full h-full object-cover card-img-hover" alt="Muzetë">
                         </div>
                         <div class="p-8">
                             <h3 class="text-2xl font-bold mb-2">Muzetë e Vatikanit</h3>
-                            <p class="text-slate-600 mb-6 italic">Rezervoni biletat online për orën 09:00. Mos humbisni Kapelën Sistine!</p>
+                            <p class="text-slate-600 mb-6 italic">Kapela Sistine është "must-see". Rezervimi është i domosdoshëm.</p>
                             <a href="https://www.google.com/maps/dir/?api=1&destination=Vatican+Museums" target="_blank" class="flex items-center justify-center w-full bg-slate-900 text-white py-4 rounded-xl font-bold hover:bg-emerald-600 transition-colors shadow-lg">
-                                <i class="fas fa-location-arrow mr-2"></i> SHKO TE VATIKANI
+                                <i class="fas fa-location-arrow mr-2"></i> NIS DITËN TE VATIKANI
                             </a>
                         </div>
                     </div>
                 </div>
 
-                <!-- Vendi 2 -->
+                <!-- 3.2 Bazilika -->
                 <div class="relative pl-12 group">
                     <div class="step-line"></div>
                     <div class="absolute left-0 top-0 w-10 h-10 bg-white border-4 border-emerald-600 rounded-full flex items-center justify-center font-bold text-emerald-600 z-10 shadow-sm">2</div>
-                    <div class="bg-white rounded-3xl shadow-xl shadow-slate-200/50 border border-slate-100 overflow-hidden">
-                        <div class="overflow-hidden h-64">
+                    <div class="bg-white rounded-3xl shadow-xl border border-slate-100 overflow-hidden">
+                        <div class="overflow-hidden h-72">
                             <img src="https://images.unsplash.com/photo-1542820239-01458807d471?auto=format&fit=crop&w=1000&q=80" class="w-full h-full object-cover card-img-hover" alt="Bazilika">
                         </div>
                         <div class="p-8">
                             <h3 class="text-2xl font-bold mb-2">Bazilika e Shën Pjetrit</h3>
-                            <p class="text-slate-600 mb-6 italic">Kisha më e madhe në botë. Ngjituni në kupolë për pamjen më ikonike të Romës.</p>
-                            <a href="https://www.google.com/maps/dir/?api=1&origin=Vatican+Museums&destination=St.+Peter's+Basilica" target="_blank" class="flex items-center justify-center w-full bg-emerald-600 text-white py-4 rounded-xl font-bold hover:bg-emerald-700 transition-colors shadow-lg shadow-emerald-100">
+                            <p class="text-slate-600 mb-6 italic">Shijoni madhështinë e kupolës së Michelangelos.</p>
+                            <a href="https://www.google.com/maps/dir/?api=1&origin=Vatican+Museums&destination=St.+Peter's+Basilica" target="_blank" class="flex items-center justify-center w-full bg-emerald-600 text-white py-4 rounded-xl font-bold hover:bg-emerald-700 transition-colors shadow-lg">
                                 <i class="fas fa-walking mr-2"></i> NGA MUZETË TE BAZILIKA
                             </a>
                         </div>
                     </div>
                 </div>
 
-                <!-- Vendi 3 -->
+                <!-- 3.3 Janiculum Hill -->
                 <div class="relative pl-12 group">
+                    <div class="step-line"></div>
                     <div class="absolute left-0 top-0 w-10 h-10 bg-white border-4 border-emerald-600 rounded-full flex items-center justify-center font-bold text-emerald-600 z-10 shadow-sm">3</div>
-                    <div class="bg-white rounded-3xl shadow-xl shadow-slate-200/50 border border-slate-100 overflow-hidden">
-                        <div class="overflow-hidden h-64">
+                    <div class="bg-white rounded-3xl shadow-xl border border-slate-100 overflow-hidden">
+                        <div class="overflow-hidden h-72">
+                            <img src="https://images.unsplash.com/photo-1533230408703-a44747209774?auto=format&fit=crop&w=1000&q=80" class="w-full h-full object-cover card-img-hover" alt="Janiculum Hill">
+                        </div>
+                        <div class="p-8">
+                            <h3 class="text-2xl font-bold mb-2">Janiculum Hill (Pamja)</h3>
+                            <p class="text-slate-600 mb-6 italic">Pamja më e bukur e Romës nga lart para perëndimit.</p>
+                            <a href="https://www.google.com/maps/dir/?api=1&origin=St.+Peter's+Basilica&destination=Gianicolo" target="_blank" class="flex items-center justify-center w-full bg-emerald-600 text-white py-4 rounded-xl font-bold hover:bg-emerald-700 transition-colors shadow-lg">
+                                <i class="fas fa-route mr-2"></i> NGA BAZILIKA TE KODRA
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 3.4 Trastevere -->
+                <div class="relative pl-12 group">
+                    <div class="absolute left-0 top-0 w-10 h-10 bg-white border-4 border-emerald-600 rounded-full flex items-center justify-center font-bold text-emerald-600 z-10 shadow-sm">4</div>
+                    <div class="bg-white rounded-3xl shadow-xl border border-slate-100 overflow-hidden">
+                        <div class="overflow-hidden h-72">
                             <img src="https://images.unsplash.com/photo-1542125381-c9183664d60c?auto=format&fit=crop&w=1000&q=80" class="w-full h-full object-cover card-img-hover" alt="Trastevere">
                         </div>
                         <div class="p-8">
                             <h3 class="text-2xl font-bold mb-2">Trastevere (Darka Finale)</h3>
-                            <p class="text-slate-600 mb-6 italic">Mbylleni udhëtimin tuaj në lagjen më boheme të Romës me një pasta "Carbonara" origjinale.</p>
-                            <a href="https://www.google.com/maps/dir/?api=1&origin=St.+Peter's+Basilica&destination=Trastevere+Rome" target="_blank" class="flex items-center justify-center w-full bg-emerald-600 text-white py-4 rounded-xl font-bold hover:bg-emerald-700 transition-colors shadow-lg">
-                                <i class="fas fa-utensils mr-2"></i> NGA BAZILIKA TE DARKA
+                            <p class="text-slate-600 mb-6 italic">Rrugicat e ngushta, lulet dhe ushqimi më i mirë në Romë.</p>
+                            <a href="https://www.google.com/maps/dir/?api=1&origin=Gianicolo&destination=Trastevere+Rome" target="_blank" class="flex items-center justify-center w-full bg-emerald-600 text-white py-4 rounded-xl font-bold hover:bg-emerald-700 transition-colors shadow-lg">
+                                <i class="fas fa-utensils mr-2"></i> NGA KODRA TE DARKA
                             </a>
                         </div>
                     </div>
@@ -241,9 +295,9 @@
         </div>
     </main>
 
-    <footer class="bg-slate-900 text-white py-12 px-4 text-center">
-        <div class="serif italic text-2xl mb-4 text-amber-500 underline underline-offset-8">Arlind & Arjola</div>
-        <p class="text-slate-400 max-w-md mx-auto">Ky udhëzues interaktiv u krijua për t'ju dhuruar kujtimet më të bukura në qytetin e dashurisë dhe historisë.</p>
+    <footer class="bg-slate-900 text-white py-16 px-4 text-center">
+        <div class="serif italic text-3xl mb-6 text-amber-500 underline underline-offset-8">Arlind & Arjola</div>
+        <p class="text-slate-400 max-w-lg mx-auto leading-relaxed">Ky udhëzues u plotësua me 12 destinacione dhe foto fantastike për t'ju dhuruar eksperiencën më të plotë romake. Shijoni çdo hap!</p>
     </footer>
 
 </body>
