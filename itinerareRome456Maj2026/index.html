@@ -35,8 +35,15 @@
         .group:hover .card-img-hover {
             transform: scale(1.05);
         }
-        .gradient-border {
-            border-image: linear-gradient(to bottom, #d97706, #3b82f6, #10b981) 1;
+        /* Fix for mobile images to ensure they maintain aspect ratio and fill space */
+        .img-container {
+            height: 18rem; /* 288px */
+            overflow: hidden;
+        }
+        @media (max-width: 640px) {
+            .img-container {
+                height: 14rem; /* Slightly shorter on small screens */
+            }
         }
     </style>
 </head>
@@ -47,7 +54,7 @@
         <div class="bg-black/30 p-10 rounded-3xl backdrop-blur-md border border-white/20 shadow-2xl max-w-3xl">
             <h1 class="text-5xl md:text-7xl font-black mb-4 serif italic tracking-wide">Udhëtimi i Arlindit & Arjolës</h1>
             <div class="h-1.5 w-32 bg-amber-500 mx-auto my-6 rounded-full shadow-lg"></div>
-            <p class="text-xl md:text-2xl opacity-95 font-light leading-relaxed">Eksplorimi i 12 mrekullive të Romës në 3 ditë të paharrueshme.</p>
+            <p class="text-xl md:text-2xl opacity-95 font-light leading-relaxed">Eksplorimi i mrekullive të Romës në 3 ditë të paharrueshme.</p>
         </div>
         <a href="#dita1" class="mt-12 animate-bounce bg-white text-slate-900 w-16 h-16 rounded-full flex items-center justify-center shadow-2xl hover:bg-amber-500 hover:text-white transition-all">
             <i class="fas fa-chevron-down text-2xl"></i>
@@ -69,7 +76,7 @@
                     <div class="step-line"></div>
                     <div class="absolute left-0 top-0 w-10 h-10 bg-white border-4 border-amber-600 rounded-full flex items-center justify-center font-bold text-amber-600 z-10 shadow-sm">1</div>
                     <div class="bg-white rounded-3xl shadow-xl border border-slate-100 overflow-hidden">
-                        <div class="overflow-hidden h-72">
+                        <div class="img-container">
                             <img src="https://cdnimpuls.com/voxnews.al/media3/-640-0-koloseu-1664905387.jpeg" class="w-full h-full object-cover card-img-hover" alt="Koloseu">
                         </div>
                         <div class="p-8">
@@ -87,8 +94,8 @@
                     <div class="step-line"></div>
                     <div class="absolute left-0 top-0 w-10 h-10 bg-white border-4 border-amber-600 rounded-full flex items-center justify-center font-bold text-amber-600 z-10 shadow-sm">2</div>
                     <div class="bg-white rounded-3xl shadow-xl border border-slate-100 overflow-hidden">
-                        <div class="overflow-hidden h-72">
-                            <img src="https://images.unsplash.com/photo-1541079143798-d698f1ec7641?auto=format&fit=crop&w=1000&q=80" class="w-full h-full object-cover card-img-hover" alt="Forumi Romak">
+                        <div class="img-container">
+                            <img src="https://selectitaly.com/blog/wp-content/uploads/2016/02/Colosseum-Forum-Tour-View-from-top-tier.jpg" class="w-full h-full object-cover card-img-hover" alt="Forumi Romak">
                         </div>
                         <div class="p-8">
                             <h3 class="text-2xl font-bold mb-2">Forumi Romak & Palatine</h3>
@@ -105,8 +112,8 @@
                     <div class="step-line"></div>
                     <div class="absolute left-0 top-0 w-10 h-10 bg-white border-4 border-amber-600 rounded-full flex items-center justify-center font-bold text-amber-600 z-10 shadow-sm">3</div>
                     <div class="bg-white rounded-3xl shadow-xl border border-slate-100 overflow-hidden">
-                        <div class="overflow-hidden h-72">
-                            <img src="https://images.unsplash.com/photo-1590422955531-18e478546949?auto=format&fit=crop&w=1000&q=80" class="w-full h-full object-cover card-img-hover" alt="Piazza Venezia">
+                        <div class="img-container">
+                            <img src="https://www.italia.it/content/dam/tdh/en/destinations/lazio/roma/piazza-venezia/media/20220426095201-piazza-venezia-roma-lazio-shutterstock-340381193.jpg" class="w-full h-full object-cover card-img-hover" alt="Piazza Venezia">
                         </div>
                         <div class="p-8">
                             <h3 class="text-2xl font-bold mb-2">Piazza Venezia</h3>
@@ -122,8 +129,8 @@
                 <div class="relative pl-12 group">
                     <div class="absolute left-0 top-0 w-10 h-10 bg-white border-4 border-amber-600 rounded-full flex items-center justify-center font-bold text-amber-600 z-10 shadow-sm">4</div>
                     <div class="bg-white rounded-3xl shadow-xl border border-slate-100 overflow-hidden">
-                        <div class="overflow-hidden h-72">
-                            <img src="https://images.unsplash.com/photo-1599388835472-358045618413?auto=format&fit=crop&w=1000&q=80" class="w-full h-full object-cover card-img-hover" alt="Teatro di Marcello">
+                        <div class="img-container">
+                            <img src="https://upload.wikimedia.org/wikipedia/commons/a/a2/Teatro_di_Marcello_intero.jpg" class="w-full h-full object-cover card-img-hover" alt="Teatro di Marcello">
                         </div>
                         <div class="p-8">
                             <h3 class="text-2xl font-bold mb-2">Teatro di Marcello</h3>
@@ -149,7 +156,7 @@
                     <div class="step-line"></div>
                     <div class="absolute left-0 top-0 w-10 h-10 bg-white border-4 border-blue-600 rounded-full flex items-center justify-center font-bold text-blue-600 z-10 shadow-sm">1</div>
                     <div class="bg-white rounded-3xl shadow-xl border border-slate-100 overflow-hidden">
-                        <div class="overflow-hidden h-72">
+                        <div class="img-container">
                             <img src="https://images.unsplash.com/photo-1525874684015-58379d421a52?auto=format&fit=crop&w=1000&q=80" class="w-full h-full object-cover card-img-hover" alt="Trevi">
                         </div>
                         <div class="p-8">
@@ -167,8 +174,8 @@
                     <div class="step-line"></div>
                     <div class="absolute left-0 top-0 w-10 h-10 bg-white border-4 border-blue-600 rounded-full flex items-center justify-center font-bold text-blue-600 z-10 shadow-sm">2</div>
                     <div class="bg-white rounded-3xl shadow-xl border border-slate-100 overflow-hidden">
-                        <div class="overflow-hidden h-72">
-                            <img src="https://images.unsplash.com/photo-1515542641795-d8e88385529a?auto=format&fit=crop&w=1000&q=80" class="w-full h-full object-cover card-img-hover" alt="Pantheon">
+                        <div class="img-container">
+                            <img src="https://monitor.al/wp-content/uploads/2024/08/Panteoni-Rome-4-scaled-1-1024x576.jpg" class="w-full h-full object-cover card-img-hover" alt="Pantheon">
                         </div>
                         <div class="p-8">
                             <h3 class="text-2xl font-bold mb-2">Panteoni</h3>
@@ -185,7 +192,7 @@
                     <div class="step-line"></div>
                     <div class="absolute left-0 top-0 w-10 h-10 bg-white border-4 border-blue-600 rounded-full flex items-center justify-center font-bold text-blue-600 z-10 shadow-sm">3</div>
                     <div class="bg-white rounded-3xl shadow-xl border border-slate-100 overflow-hidden">
-                        <div class="overflow-hidden h-72">
+                        <div class="img-container">
                             <img src="https://images.unsplash.com/photo-1520175480921-4edfa2983e0f?auto=format&fit=crop&w=1000&q=80" class="w-full h-full object-cover card-img-hover" alt="Piazza Navona">
                         </div>
                         <div class="p-8">
@@ -202,8 +209,8 @@
                 <div class="relative pl-12 group">
                     <div class="absolute left-0 top-0 w-10 h-10 bg-white border-4 border-blue-600 rounded-full flex items-center justify-center font-bold text-blue-600 z-10 shadow-sm">4</div>
                     <div class="bg-white rounded-3xl shadow-xl border border-slate-100 overflow-hidden">
-                        <div class="overflow-hidden h-72">
-                            <img src="https://images.unsplash.com/photo-1542820239-01458807d471?auto=format&fit=crop&w=1000&q=80" class="w-full h-full object-cover card-img-hover" alt="Castel Sant'Angelo">
+                        <div class="img-container">
+                            <img src="https://castelsantangelorome.com/wp-content/uploads/2024/03/castel-santangelo-entrata-1024x683.webp" class="w-full h-full object-cover card-img-hover" alt="Castel Sant'Angelo">
                         </div>
                         <div class="p-8">
                             <h3 class="text-2xl font-bold mb-2">Castel Sant'Angelo</h3>
@@ -229,8 +236,8 @@
                     <div class="step-line"></div>
                     <div class="absolute left-0 top-0 w-10 h-10 bg-white border-4 border-emerald-600 rounded-full flex items-center justify-center font-bold text-emerald-600 z-10 shadow-sm">1</div>
                     <div class="bg-white rounded-3xl shadow-xl border border-slate-100 overflow-hidden">
-                        <div class="overflow-hidden h-72">
-                            <img src="https://images.unsplash.com/photo-1594991981392-13a195c9366c?auto=format&fit=crop&w=1000&q=80" class="w-full h-full object-cover card-img-hover" alt="Vatican Museums">
+                        <div class="img-container">
+                            <img src="https://cdnimpuls.com/a2news.com/wp-content/uploads/2020/11/-1000-0-1-20.jpg" class="w-full h-full object-cover card-img-hover" alt="Vatican Museums">
                         </div>
                         <div class="p-8">
                             <h3 class="text-2xl font-bold mb-2">Muzetë e Vatikanit</h3>
@@ -247,8 +254,8 @@
                     <div class="step-line"></div>
                     <div class="absolute left-0 top-0 w-10 h-10 bg-white border-4 border-emerald-600 rounded-full flex items-center justify-center font-bold text-emerald-600 z-10 shadow-sm">2</div>
                     <div class="bg-white rounded-3xl shadow-xl border border-slate-100 overflow-hidden">
-                        <div class="overflow-hidden h-72">
-                            <img src="https://images.unsplash.com/photo-1610484080838-5182046ca903?auto=format&fit=crop&w=1000&q=80" class="w-full h-full object-cover card-img-hover" alt="St. Peter's Basilica">
+                        <div class="img-container">
+                            <img src="https://albuktv.com/wp-content/uploads/2020/05/bazilika.jpg" class="w-full h-full object-cover card-img-hover" alt="St. Peter's Basilica">
                         </div>
                         <div class="p-8">
                             <h3 class="text-2xl font-bold mb-2">Bazilika e Shën Pjetrit</h3>
@@ -265,8 +272,8 @@
                     <div class="step-line"></div>
                     <div class="absolute left-0 top-0 w-10 h-10 bg-white border-4 border-emerald-600 rounded-full flex items-center justify-center font-bold text-emerald-600 z-10 shadow-sm">3</div>
                     <div class="bg-white rounded-3xl shadow-xl border border-slate-100 overflow-hidden">
-                        <div class="overflow-hidden h-72">
-                            <img src="https://images.unsplash.com/photo-1533230408703-a44747209774?auto=format&fit=crop&w=1000&q=80" class="w-full h-full object-cover card-img-hover" alt="Janiculum View">
+                        <div class="img-container">
+                            <img src="https://www.civitatis.com/f/italia/roma/guia/gianicolo-m.jpg" class="w-full h-full object-cover card-img-hover" alt="Janiculum View">
                         </div>
                         <div class="p-8">
                             <h3 class="text-2xl font-bold mb-2">Pamja nga Janiculum (Gianicolo)</h3>
@@ -282,8 +289,8 @@
                 <div class="relative pl-12 group">
                     <div class="absolute left-0 top-0 w-10 h-10 bg-white border-4 border-emerald-600 rounded-full flex items-center justify-center font-bold text-emerald-600 z-10 shadow-sm">4</div>
                     <div class="bg-white rounded-3xl shadow-xl border border-slate-100 overflow-hidden">
-                        <div class="overflow-hidden h-72">
-                            <img src="https://images.unsplash.com/photo-1542125381-c9183664d60c?auto=format&fit=crop&w=1000&q=80" class="w-full h-full object-cover card-img-hover" alt="Trastevere Night">
+                        <div class="img-container">
+                            <img src="https://romesite.com/images/rome_trastevere.webp" class="w-full h-full object-cover card-img-hover" alt="Trastevere Night">
                         </div>
                         <div class="p-8">
                             <h3 class="text-2xl font-bold mb-2">Lagja Trastevere</h3>
@@ -301,7 +308,7 @@
     <footer class="bg-slate-900 text-white py-20 px-4 text-center">
         <div class="serif italic text-4xl mb-8 text-amber-500 underline underline-offset-8">Arlind & Arjola</div>
         <div class="max-w-2xl mx-auto">
-            <p class="text-slate-400 text-lg leading-relaxed mb-8">Ky udhëzues interaktiv u plotësua me 12 destinacionet më ikonike të Romës. Shijoni çdo moment të këtij udhëtimi të mrekullueshëm!</p>
+            <p class="text-slate-400 text-lg leading-relaxed mb-8">Ky udhëzues interaktiv u plotësua me të gjitha fotot tuaja të zgjedhura. Shijoni çdo moment të këtij udhëtimi të mrekullueshëm!</p>
             <div class="flex justify-center space-x-6 text-2xl">
                 <i class="fas fa-camera text-amber-500/50"></i>
                 <i class="fas fa-heart text-amber-500/50"></i>
