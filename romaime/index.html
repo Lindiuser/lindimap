@@ -1,0 +1,542 @@
+<!DOCTYPE html>
+<html lang="sq">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Udhëtimi në Romë - 12 Destinacione</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,700;1,700&family=Inter:wght@400;600;800&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+            scroll-behavior: smooth;
+        }
+        .serif {
+            font-family: 'Playfair Display', serif;
+        }
+        .hero-section {
+            background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.8)), url('https://images.unsplash.com/photo-1552832230-c0197dd311b5?q=80&w=1920&auto=format&fit=crop');
+            background-size: cover;
+            background-position: center;
+        }
+        .step-line {
+            position: absolute;
+            left: 20px;
+            top: 40px;
+            bottom: -40px;
+            width: 2px;
+            background: #cbd5e1;
+        }
+        .card-img-hover {
+            transition: transform 0.5s ease;
+        }
+        .group:hover .card-img-hover {
+            transform: scale(1.05);
+        }
+        .img-container {
+            height: 18rem;
+            overflow: hidden;
+        }
+        .timeline-box {
+            @apply bg-slate-100 border-l-4 p-4 mb-8 rounded-r-xl text-sm;
+        }
+        #notification {
+            display: none;
+            position: fixed;
+            top: 20px;
+            right: 20px;
+            z-index: 9999;
+            padding: 1rem 1.5rem;
+            border-radius: 12px;
+            color: white;
+            font-weight: 600;
+            box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.2);
+            animation: slideIn 0.3s ease-out;
+        }
+        @keyframes slideIn { from { transform: translateX(100%); opacity: 0; } to { transform: translateX(0); opacity: 1; } }
+        
+        .upload-loading {
+            animation: pulse 1.5s infinite;
+            pointer-events: none;
+            opacity: 0.6;
+        }
+        @keyframes pulse { 0% { opacity: 0.6; } 50% { opacity: 0.3; } 100% { opacity: 0.6; } }
+
+        #backToTop {
+            display: none;
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            z-index: 99;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+    </style>
+</head>
+<body class="bg-slate-50 text-slate-900">
+
+    <div id="notification"></div>
+
+    <button id="backToTop" onclick="window.scrollTo({top: 0, behavior: 'smooth'})" class="bg-amber-600 text-white w-14 h-14 rounded-full shadow-2xl flex items-center justify-center hover:bg-amber-700 focus:outline-none border-4 border-white">
+        <i class="fas fa-arrow-up text-xl"></i>
+    </button>
+
+    <header class="hero-section h-[70vh] flex flex-col justify-center items-center text-center text-white px-4">
+        <div class="bg-black/30 p-10 rounded-3xl backdrop-blur-md border border-white/20 shadow-2xl max-w-3xl">
+            <h1 class="text-5xl md:text-7xl font-black mb-4 serif italic tracking-wide">Roma Ime</h1>
+            <div class="h-1.5 w-32 bg-amber-500 mx-auto my-6 rounded-full shadow-lg"></div>
+            <p class="text-xl md:text-2xl opacity-95 font-light leading-relaxed">Udhëzuesi i plotë për 12 xhevahiret e qytetit të amshuar.</p>
+        </div>
+        <div class="mt-8 flex flex-wrap justify-center gap-4">
+            <a href="#dita1" class="px-6 py-2 bg-amber-600 rounded-full font-bold hover:bg-amber-500 transition shadow-lg">Dita 1</a>
+            <a href="#dita2" class="px-6 py-2 bg-blue-600 rounded-full font-bold hover:bg-blue-500 transition shadow-lg">Dita 2</a>
+            <a href="#dita3" class="px-6 py-2 bg-emerald-600 rounded-full font-bold hover:bg-emerald-500 transition shadow-lg">Dita 3</a>
+        </div>
+    </header>
+
+    <main class="max-w-4xl mx-auto px-4 py-16">
+
+        <!-- DITA 1 -->
+        <section id="dita1" class="mb-32">
+            <h2 class="text-4xl font-black text-amber-600 mb-6 flex items-center serif">
+                <span class="bg-amber-600 text-white w-12 h-12 rounded-xl flex items-center justify-center mr-4 text-2xl shadow-lg">1</span>
+                Dita 1: Roma Antike
+            </h2>
+            
+            <div class="timeline-box border-amber-500">
+                <h4 class="font-bold mb-2 uppercase tracking-wider text-amber-700 italic">Destinacionet:</h4>
+                <p class="text-slate-600 italic">Koloseu ➔ Forumi Romak ➔ Piazza Venezia ➔ Teatro di Marcello</p>
+            </div>
+
+            <div class="space-y-16">
+                <!-- 1. Koloseu -->
+                <div class="relative pl-12 group">
+                    <div class="step-line"></div>
+                    <div class="absolute left-0 top-0 w-10 h-10 bg-white border-4 border-amber-600 rounded-full flex items-center justify-center font-bold text-amber-600 z-10 shadow-sm">1</div>
+                    <div class="bg-white rounded-3xl shadow-xl border border-slate-100 overflow-hidden">
+                        <div class="img-container">
+                            <img src="https://cdnimpuls.com/voxnews.al/media3/-640-0-koloseu-1664905387.jpeg" class="w-full h-full object-cover card-img-hover" alt="Koloseu">
+                        </div>
+                        <div class="p-8">
+                            <h3 class="text-2xl font-bold mb-2">Koloseu</h3>
+                            <p class="text-slate-600 mb-6">Simboli i fuqisë së Romës. Ky amfiteatër gjigand ka pritur luftimet më të famshme të gladiatorëve në histori.</p>
+                            
+                            <div class="upload-container mb-6 p-3 bg-slate-50 rounded-xl border-2 border-dashed border-slate-200 hover:border-amber-400 transition-colors">
+                                <label class="flex items-center justify-center cursor-pointer space-x-3 text-slate-500 hover:text-amber-600 py-1">
+                                    <i class="fas fa-camera text-xl"></i>
+                                    <span class="text-xs font-bold uppercase tracking-wider">Ngarko Kujtim</span>
+                                    <input type="file" class="hidden" accept="image/*" onchange="uploadToSupabase(this, 'Koloseu')">
+                                </label>
+                            </div>
+
+                            <a href="https://www.google.com/maps/dir/?api=1&destination=Colosseum" target="_blank" class="flex items-center justify-center w-full bg-slate-900 text-white py-4 rounded-xl font-bold hover:bg-amber-600 transition-colors">
+                                <i class="fas fa-location-arrow mr-2"></i> NIS UDHËTIMIN KËTU
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 2. Forumi Romak -->
+                <div class="relative pl-12 group">
+                    <div class="step-line"></div>
+                    <div class="absolute left-0 top-0 w-10 h-10 bg-white border-4 border-amber-600 rounded-full flex items-center justify-center font-bold text-amber-600 z-10 shadow-sm">2</div>
+                    <div class="bg-white rounded-3xl shadow-xl border border-slate-100 overflow-hidden">
+                        <div class="img-container">
+                            <img src="https://selectitaly.com/blog/wp-content/uploads/2016/02/Colosseum-Forum-Tour-View-from-top-tier.jpg" class="w-full h-full object-cover card-img-hover" alt="Forumi">
+                        </div>
+                        <div class="p-8">
+                            <h3 class="text-2xl font-bold mb-2">Forumi Romak & Palatine</h3>
+                            <p class="text-slate-600 mb-6">Qendra e jetës publike, tregtare dhe politike. Ecni mes mbetjeve të tempujve ku u shkrua historia.</p>
+                            
+                            <div class="upload-container mb-6 p-3 bg-slate-50 rounded-xl border-2 border-dashed border-slate-200 hover:border-amber-400 transition-colors">
+                                <label class="flex items-center justify-center cursor-pointer space-x-3 text-slate-500 hover:text-amber-600 py-1">
+                                    <i class="fas fa-camera text-xl"></i>
+                                    <span class="text-xs font-bold uppercase tracking-wider">Ngarko Kujtim</span>
+                                    <input type="file" class="hidden" accept="image/*" onchange="uploadToSupabase(this, 'Forumi')">
+                                </label>
+                            </div>
+
+                            <a href="https://www.google.com/maps/dir/?api=1&origin=Colosseum&destination=Roman+Forum" target="_blank" class="flex items-center justify-center w-full bg-amber-600 text-white py-4 rounded-xl font-bold hover:bg-amber-700 transition-colors">
+                                <i class="fas fa-walking mr-2"></i> NGA KOLOSEU TE FORUMI
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 3. Piazza Venezia -->
+                <div class="relative pl-12 group">
+                    <div class="step-line"></div>
+                    <div class="absolute left-0 top-0 w-10 h-10 bg-white border-4 border-amber-600 rounded-full flex items-center justify-center font-bold text-amber-600 z-10 shadow-sm">3</div>
+                    <div class="bg-white rounded-3xl shadow-xl border border-slate-100 overflow-hidden">
+                        <div class="img-container">
+                            <img src="https://www.italia.it/content/dam/tdh/en/destinations/lazio/roma/piazza-venezia/media/20220426095201-piazza-venezia-roma-lazio-shutterstock-340381193.jpg" class="w-full h-full object-cover card-img-hover" alt="Piazza Venezia">
+                        </div>
+                        <div class="p-8">
+                            <h3 class="text-2xl font-bold mb-2">Piazza Venezia</h3>
+                            <p class="text-slate-600 mb-6">Shtëpia e monumentit 'Vittoriano'. Një udhëkryq mahnitës që bashkon Romën antike me atë moderne.</p>
+                            
+                            <div class="upload-container mb-6 p-3 bg-slate-50 rounded-xl border-2 border-dashed border-slate-200 hover:border-amber-400 transition-colors">
+                                <label class="flex items-center justify-center cursor-pointer space-x-3 text-slate-500 hover:text-amber-600 py-1">
+                                    <i class="fas fa-camera text-xl"></i>
+                                    <span class="text-xs font-bold uppercase tracking-wider">Ngarko Kujtim</span>
+                                    <input type="file" class="hidden" accept="image/*" onchange="uploadToSupabase(this, 'PiazzaVenezia')">
+                                </label>
+                            </div>
+
+                            <a href="https://www.google.com/maps/dir/?api=1&origin=Roman+Forum&destination=Piazza+Venezia" target="_blank" class="flex items-center justify-center w-full bg-amber-600 text-white py-4 rounded-xl font-bold hover:bg-amber-700 transition-colors">
+                                <i class="fas fa-walking mr-2"></i> DREJT SHESHIT VENEZIA
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 4. Teatro di Marcello -->
+                <div class="relative pl-12 group">
+                    <div class="absolute left-0 top-0 w-10 h-10 bg-white border-4 border-amber-600 rounded-full flex items-center justify-center font-bold text-amber-600 z-10 shadow-sm">4</div>
+                    <div class="bg-white rounded-3xl shadow-xl border border-slate-100 overflow-hidden">
+                        <div class="img-container">
+                            <img src="https://upload.wikimedia.org/wikipedia/commons/a/a2/Teatro_di_Marcello_intero.jpg" class="w-full h-full object-cover card-img-hover" alt="Teatro di Marcello">
+                        </div>
+                        <div class="p-8">
+                            <h3 class="text-2xl font-bold mb-2">Teatro di Marcello</h3>
+                            <p class="text-slate-600 mb-6">Shpesh i quajtur si "Koloseu i vogël", ky teatër i vjetër është një nga xhevahiret më të bukura arkitekturore të qytetit.</p>
+                            
+                            <div class="upload-container mb-6 p-3 bg-slate-50 rounded-xl border-2 border-dashed border-slate-200 hover:border-amber-400 transition-colors">
+                                <label class="flex items-center justify-center cursor-pointer space-x-3 text-slate-500 hover:text-amber-600 py-1">
+                                    <i class="fas fa-camera text-xl"></i>
+                                    <span class="text-xs font-bold uppercase tracking-wider">Ngarko Kujtim</span>
+                                    <input type="file" class="hidden" accept="image/*" onchange="uploadToSupabase(this, 'TeatroMarcello')">
+                                </label>
+                            </div>
+
+                            <a href="https://www.google.com/maps/dir/?api=1&origin=Piazza+Venezia&destination=Teatro+di+Marcello" target="_blank" class="flex items-center justify-center w-full bg-amber-600 text-white py-4 rounded-xl font-bold hover:bg-amber-700 transition-colors">
+                                <i class="fas fa-walking mr-2"></i> MBYLL DITËN ANTIKE KËTU
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- DITA 2 -->
+        <section id="dita2" class="mb-32">
+            <h2 class="text-4xl font-black text-blue-600 mb-6 flex items-center serif">
+                <span class="bg-blue-600 text-white w-12 h-12 rounded-xl flex items-center justify-center mr-4 text-2xl shadow-lg">2</span>
+                Dita 2: Qendra Baroke
+            </h2>
+            
+            <div class="timeline-box border-blue-500">
+                <h4 class="font-bold mb-2 uppercase tracking-wider text-blue-700 italic">Destinacionet:</h4>
+                <p class="text-slate-600 italic">Fontana di Trevi ➔ Panteoni ➔ Piazza Navona ➔ Castel Sant'Angelo</p>
+            </div>
+
+            <div class="space-y-16">
+                <!-- 5. Fontana di Trevi -->
+                <div class="relative pl-12 group">
+                    <div class="step-line"></div>
+                    <div class="absolute left-0 top-0 w-10 h-10 bg-white border-4 border-blue-600 rounded-full flex items-center justify-center font-bold text-blue-600 z-10 shadow-sm">5</div>
+                    <div class="bg-white rounded-3xl shadow-xl border border-slate-100 overflow-hidden">
+                        <div class="img-container">
+                            <img src="https://images.unsplash.com/photo-1525874684015-58379d421a52?auto=format&fit=crop&w=1000&q=80" class="w-full h-full object-cover card-img-hover" alt="Trevi">
+                        </div>
+                        <div class="p-8">
+                            <h3 class="text-2xl font-bold mb-2">Fontana di Trevi</h3>
+                            <p class="text-slate-600 mb-6">Më e bukura në botë. Mos harroni të hidhni një monedhë për t'u rikthyer në Romë!</p>
+                            
+                            <div class="upload-container mb-6 p-3 bg-slate-50 rounded-xl border-2 border-dashed border-slate-200 hover:border-blue-400 transition-colors">
+                                <label class="flex items-center justify-center cursor-pointer space-x-3 text-slate-500 hover:text-blue-600 py-1">
+                                    <i class="fas fa-camera text-xl"></i>
+                                    <span class="text-xs font-bold uppercase tracking-wider">Ngarko Kujtim</span>
+                                    <input type="file" class="hidden" accept="image/*" onchange="uploadToSupabase(this, 'FontanaTrevi')">
+                                </label>
+                            </div>
+
+                            <a href="https://www.google.com/maps/dir/?api=1&destination=Trevi+Fountain" target="_blank" class="flex items-center justify-center w-full bg-slate-900 text-white py-4 rounded-xl font-bold hover:bg-blue-600 transition-colors">
+                                <i class="fas fa-location-arrow mr-2"></i> NIS DITËN TE FONTANA
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 6. Panteoni -->
+                <div class="relative pl-12 group">
+                    <div class="step-line"></div>
+                    <div class="absolute left-0 top-0 w-10 h-10 bg-white border-4 border-blue-600 rounded-full flex items-center justify-center font-bold text-blue-600 z-10 shadow-sm">6</div>
+                    <div class="bg-white rounded-3xl shadow-xl border border-slate-100 overflow-hidden">
+                        <div class="img-container">
+                            <img src="https://framerusercontent.com/images/4v1yoFLtSgBS6AQz6cL0qS0E1RM.png" class="w-full h-full object-cover card-img-hover" alt="Pantheon">
+                        </div>
+                        <div class="p-8">
+                            <h3 class="text-2xl font-bold mb-2">Panteoni</h3>
+                            <p class="text-slate-600 mb-6">Një mrekulli inxhinierike 2000 vjeçare me kupolën më të madhe të pa-përforcuar.</p>
+                            
+                            <div class="upload-container mb-6 p-3 bg-slate-50 rounded-xl border-2 border-dashed border-slate-200 hover:border-blue-400 transition-colors">
+                                <label class="flex items-center justify-center cursor-pointer space-x-3 text-slate-500 hover:text-blue-600 py-1">
+                                    <i class="fas fa-camera text-xl"></i>
+                                    <span class="text-xs font-bold uppercase tracking-wider">Ngarko Kujtim</span>
+                                    <input type="file" class="hidden" accept="image/*" onchange="uploadToSupabase(this, 'Panteoni')">
+                                </label>
+                            </div>
+
+                            <a href="https://www.google.com/maps/dir/?api=1&origin=Trevi+Fountain&destination=Pantheon+Rome" target="_blank" class="flex items-center justify-center w-full bg-blue-600 text-white py-4 rounded-xl font-bold hover:bg-blue-700 transition-colors">
+                                <i class="fas fa-walking mr-2"></i> NGA TREVI TE PANTEONI
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 7. Piazza Navona -->
+                <div class="relative pl-12 group">
+                    <div class="step-line"></div>
+                    <div class="absolute left-0 top-0 w-10 h-10 bg-white border-4 border-blue-600 rounded-full flex items-center justify-center font-bold text-blue-600 z-10 shadow-sm">7</div>
+                    <div class="bg-white rounded-3xl shadow-xl border border-slate-100 overflow-hidden">
+                        <div class="img-container">
+                            <img src="https://media.istockphoto.com/id/537714748/photo/navona-square-rome-italy.jpg?s=612x612&w=0&k=20&c=UVGkQA3R-OZsnDoF-KfxFJlzbBBPEiXLX3U6QrOwF4c=" class="w-full h-full object-cover card-img-hover" alt="Navona">
+                        </div>
+                        <div class="p-8">
+                            <h3 class="text-2xl font-bold mb-2">Piazza Navona</h3>
+                            <p class="text-slate-600 mb-6">Sheshi i artistëve dhe i tre fontanave baroke me atmosferë gjallëruese.</p>
+                            
+                            <div class="upload-container mb-6 p-3 bg-slate-50 rounded-xl border-2 border-dashed border-slate-200 hover:border-blue-400 transition-colors">
+                                <label class="flex items-center justify-center cursor-pointer space-x-3 text-slate-500 hover:text-blue-600 py-1">
+                                    <i class="fas fa-camera text-xl"></i>
+                                    <span class="text-xs font-bold uppercase tracking-wider">Ngarko Kujtim</span>
+                                    <input type="file" class="hidden" accept="image/*" onchange="uploadToSupabase(this, 'PiazzaNavona')">
+                                </label>
+                            </div>
+
+                            <a href="https://www.google.com/maps/dir/?api=1&origin=Pantheon&destination=Piazza+Navona" target="_blank" class="flex items-center justify-center w-full bg-blue-600 text-white py-4 rounded-xl font-bold hover:bg-blue-700 transition-colors">
+                                <i class="fas fa-walking mr-2"></i> DREJT SHESHIT NAVONA
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 8. Castel Sant'Angelo -->
+                <div class="relative pl-12 group">
+                    <div class="absolute left-0 top-0 w-10 h-10 bg-white border-4 border-blue-600 rounded-full flex items-center justify-center font-bold text-blue-600 z-10 shadow-sm">8</div>
+                    <div class="bg-white rounded-3xl shadow-xl border border-slate-100 overflow-hidden">
+                        <div class="img-container">
+                            <img src="https://castelsantangelorome.com/wp-content/uploads/2024/03/castel-santangelo-entrata-1024x683.webp" class="w-full h-full object-cover card-img-hover" alt="Castle">
+                        </div>
+                        <div class="p-8">
+                            <h3 class="text-2xl font-bold mb-2">Castel Sant'Angelo</h3>
+                            <p class="text-slate-600 mb-6">Kalaja historike që shërbeu si fortesë dhe rezidencë papnore.</p>
+                            
+                            <div class="upload-container mb-6 p-3 bg-slate-50 rounded-xl border-2 border-dashed border-slate-200 hover:border-blue-400 transition-colors">
+                                <label class="flex items-center justify-center cursor-pointer space-x-3 text-slate-500 hover:text-blue-600 py-1">
+                                    <i class="fas fa-camera text-xl"></i>
+                                    <span class="text-xs font-bold uppercase tracking-wider">Ngarko Kujtim</span>
+                                    <input type="file" class="hidden" accept="image/*" onchange="uploadToSupabase(this, 'CastelAngelo')">
+                                </label>
+                            </div>
+
+                            <a href="https://www.google.com/maps/dir/?api=1&origin=Piazza+Navona&destination=Castel+Sant'Angelo" target="_blank" class="flex items-center justify-center w-full bg-blue-600 text-white py-4 rounded-xl font-bold hover:bg-blue-700 transition-colors shadow-lg">
+                                <i class="fas fa-walking mr-2"></i> MBYLL DITËN TE KALAJA
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- DITA 3 -->
+        <section id="dita3" class="mb-32">
+            <h2 class="text-4xl font-black text-emerald-600 mb-6 flex items-center serif">
+                <span class="bg-emerald-600 text-white w-12 h-12 rounded-xl flex items-center justify-center mr-4 text-2xl shadow-lg">3</span>
+                Dita 3: Vatikani & Magjia e Romës
+            </h2>
+            
+            <div class="timeline-box border-emerald-500">
+                <h4 class="font-bold mb-2 uppercase tracking-wider text-emerald-700 italic">Destinacionet:</h4>
+                <p class="text-slate-600 italic">Muzetë e Vatikanit ➔ Bazilika e Shën Pjetrit ➔ Gianicolo ➔ Trastevere</p>
+            </div>
+
+            <div class="space-y-16">
+                <!-- 9. Muzetë e Vatikanit -->
+                <div class="relative pl-12 group">
+                    <div class="step-line"></div>
+                    <div class="absolute left-0 top-0 w-10 h-10 bg-white border-4 border-emerald-600 rounded-full flex items-center justify-center font-bold text-emerald-600 z-10 shadow-sm">9</div>
+                    <div class="bg-white rounded-3xl shadow-xl border border-slate-100 overflow-hidden">
+                        <div class="img-container">
+                            <img src="https://cdnimpuls.com/a2news.com/wp-content/uploads/2020/11/-1000-0-1-20.jpg" class="w-full h-full object-cover card-img-hover" alt="Vatican">
+                        </div>
+                        <div class="p-8">
+                            <h3 class="text-2xl font-bold mb-2">Muzetë e Vatikanit</h3>
+                            <p class="text-slate-600 mb-6">Shtëpia e kryeveprave të Michelangelo-s dhe Kapela Sistine.</p>
+                            
+                            <div class="upload-container mb-6 p-3 bg-slate-50 rounded-xl border-2 border-dashed border-slate-200 hover:border-emerald-400 transition-colors">
+                                <label class="flex items-center justify-center cursor-pointer space-x-3 text-slate-500 hover:text-emerald-600 py-1">
+                                    <i class="fas fa-camera text-xl"></i>
+                                    <span class="text-xs font-bold uppercase tracking-wider">Ngarko Kujtim</span>
+                                    <input type="file" class="hidden" accept="image/*" onchange="uploadToSupabase(this, 'Vatikan')">
+                                </label>
+                            </div>
+
+                            <a href="https://www.google.com/maps/dir/?api=1&destination=Vatican+Museums" target="_blank" class="flex items-center justify-center w-full bg-slate-900 text-white py-4 rounded-xl font-bold hover:bg-emerald-600 transition-colors">
+                                <i class="fas fa-location-arrow mr-2"></i> NIS DITËN TE MUZETË
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 10. Bazilika e Shën Pjetrit -->
+                <div class="relative pl-12 group">
+                    <div class="step-line"></div>
+                    <div class="absolute left-0 top-0 w-10 h-10 bg-white border-4 border-emerald-600 rounded-full flex items-center justify-center font-bold text-emerald-600 z-10 shadow-sm">10</div>
+                    <div class="bg-white rounded-3xl shadow-xl border border-slate-100 overflow-hidden">
+                        <div class="img-container">
+                            <img src="https://albuktv.com/wp-content/uploads/2020/05/bazilika.jpg" class="w-full h-full object-cover card-img-hover" alt="Basilica">
+                        </div>
+                        <div class="p-8">
+                            <h3 class="text-2xl font-bold mb-2">Bazilika e Shën Pjetrit</h3>
+                            <p class="text-slate-600 mb-6">Kisha më e rëndësishme e Krishterimit me pamje mahnitëse nga kupola.</p>
+                            
+                            <div class="upload-container mb-6 p-3 bg-slate-50 rounded-xl border-2 border-dashed border-slate-200 hover:border-emerald-400 transition-colors">
+                                <label class="flex items-center justify-center cursor-pointer space-x-3 text-slate-500 hover:text-emerald-600 py-1">
+                                    <i class="fas fa-camera text-xl"></i>
+                                    <span class="text-xs font-bold uppercase tracking-wider">Ngarko Kujtim</span>
+                                    <input type="file" class="hidden" accept="image/*" onchange="uploadToSupabase(this, 'ShenPjetri')">
+                                </label>
+                            </div>
+
+                            <a href="https://www.google.com/maps/dir/?api=1&origin=Vatican+Museums&destination=St.+Peter's+Basilica" target="_blank" class="flex items-center justify-center w-full bg-emerald-600 text-white py-4 rounded-xl font-bold hover:bg-emerald-700 transition-colors">
+                                <i class="fas fa-walking mr-2"></i> NGA MUZETË TE BAZILIKA
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 11. Gianicolo -->
+                <div class="relative pl-12 group">
+                    <div class="step-line"></div>
+                    <div class="absolute left-0 top-0 w-10 h-10 bg-white border-4 border-emerald-600 rounded-full flex items-center justify-center font-bold text-emerald-600 z-10 shadow-sm">11</div>
+                    <div class="bg-white rounded-3xl shadow-xl border border-slate-100 overflow-hidden">
+                        <div class="img-container">
+                            <img src="https://www.civitatis.com/f/italia/roma/guia/gianicolo-m.jpg" class="w-full h-full object-cover card-img-hover" alt="Gianicolo">
+                        </div>
+                        <div class="p-8">
+                            <h3 class="text-2xl font-bold mb-2">Kodra Gianicolo</h3>
+                            <p class="text-slate-600 mb-6">Panorama më e bukur e Romës, ideal për perëndimin e diellit.</p>
+                            
+                            <div class="upload-container mb-6 p-3 bg-slate-50 rounded-xl border-2 border-dashed border-slate-200 hover:border-emerald-400 transition-colors">
+                                <label class="flex items-center justify-center cursor-pointer space-x-3 text-slate-500 hover:text-emerald-600 py-1">
+                                    <i class="fas fa-camera text-xl"></i>
+                                    <span class="text-xs font-bold uppercase tracking-wider">Ngarko Kujtim</span>
+                                    <input type="file" class="hidden" accept="image/*" onchange="uploadToSupabase(this, 'Gianicolo')">
+                                </label>
+                            </div>
+
+                            <a href="https://www.google.com/maps/dir/?api=1&origin=St.+Peter's+Basilica&destination=Gianicolo" target="_blank" class="flex items-center justify-center w-full bg-emerald-600 text-white py-4 rounded-xl font-bold hover:bg-emerald-700 transition-colors">
+                                <i class="fas fa-route mr-2"></i> TE PANORAMA E QYTETIT
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 12. Trastevere -->
+                <div class="relative pl-12 group">
+                    <div class="absolute left-0 top-0 w-10 h-10 bg-white border-4 border-emerald-600 rounded-full flex items-center justify-center font-bold text-emerald-600 z-10 shadow-sm">12</div>
+                    <div class="bg-white rounded-3xl shadow-xl border border-slate-100 overflow-hidden">
+                        <div class="img-container">
+                            <img src="https://romesite.com/images/rome_trastevere.webp" class="w-full h-full object-cover card-img-hover" alt="Trastevere">
+                        </div>
+                        <div class="p-8">
+                            <h3 class="text-2xl font-bold mb-2">Lagja Trastevere</h3>
+                            <p class="text-slate-600 mb-6">Mbylleni udhëtimin në lagjen më autentike romake.</p>
+                            
+                            <div class="upload-container mb-6 p-3 bg-slate-50 rounded-xl border-2 border-dashed border-slate-200 hover:border-emerald-400 transition-colors">
+                                <label class="flex items-center justify-center cursor-pointer space-x-3 text-slate-500 hover:text-emerald-600 py-1">
+                                    <i class="fas fa-camera text-xl"></i>
+                                    <span class="text-xs font-bold uppercase tracking-wider">Ngarko Kujtim</span>
+                                    <input type="file" class="hidden" accept="image/*" onchange="uploadToSupabase(this, 'Trastevere')">
+                                </label>
+                            </div>
+
+                            <a href="https://www.google.com/maps/dir/?api=1&origin=Gianicolo&destination=Trastevere+Rome" target="_blank" class="flex items-center justify-center w-full bg-emerald-600 text-white py-4 rounded-xl font-bold hover:bg-emerald-700 transition-colors shadow-lg">
+                                <i class="fas fa-heart mr-2"></i> MBYLL UDHËTIMIN KËTU
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="bg-slate-900 text-white py-12 px-4 text-center">
+        <p class="serif italic text-2xl mb-4 text-amber-500 underline underline-offset-8 decoration-1">A & A</p>
+        <p class="text-slate-500 text-sm">© 2024 Udhëzuesi Digjital i Romës</p>
+    </footer>
+
+    <script>
+        const SUPABASE_URL = "https://nbqsxonhscsyvyhldqkt.supabase.co";
+        const SUPABASE_KEY = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6Im5icXN4b25oc2NzeXZ5aGxkcWt0Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NzQ1Mjc2MzQsImV4cCI6MjA5MDEwMzYzNH0.fcNq-dOuR6wCHQqxTsCufSdLRK5t4dlzEkiREOCWKNE";
+        const BUCKET_NAME = "images";
+
+        function showNotification(message, isError = false) {
+            const el = document.getElementById('notification');
+            el.textContent = message;
+            el.style.backgroundColor = isError ? '#ef4444' : '#10b981';
+            el.style.display = 'block';
+            setTimeout(() => { el.style.display = 'none'; }, 5000);
+        }
+
+        async function uploadToSupabase(input, destination) {
+            const file = input.files[0];
+            if (!file) return;
+
+            if (file.size > 10 * 1024 * 1024) {
+                showNotification("Skedari është shumë i madh (Max 10MB)", true);
+                return;
+            }
+
+            const container = input.closest('.upload-container');
+            container.classList.add('upload-loading');
+            showNotification("Duke u lidhur me serverin...");
+
+            try {
+                const cleanDest = destination.replace(/[^a-z0-9]/gi, '_').toLowerCase();
+                const timestamp = Date.now();
+                const fileExt = file.name.split('.').pop();
+                const fileName = `${cleanDest}_${timestamp}.${fileExt}`;
+
+                const response = await fetch(`${SUPABASE_URL}/storage/v1/object/${BUCKET_NAME}/${fileName}`, {
+                    method: 'POST',
+                    headers: { 
+                        'Authorization': `Bearer ${SUPABASE_KEY}`, 
+                        'apikey': SUPABASE_KEY,
+                        'x-upsert': 'true'
+                    },
+                    body: file
+                });
+
+                const result = await response.json();
+
+                if (response.ok) {
+                    showNotification("Sukses! Fotoja u ruajt.");
+                    container.style.borderColor = "#10b981";
+                    container.style.backgroundColor = "#f0fdf4";
+                    console.log("URL:", `${SUPABASE_URL}/storage/v1/object/public/${BUCKET_NAME}/${fileName}`);
+                } else {
+                    showNotification(`Gabim: ${result.message || result.error}`, true);
+                }
+            } catch (err) {
+                showNotification("Gabim rrjeti. Kontrollo lidhjen.", true);
+            } finally {
+                container.classList.remove('upload-loading');
+                input.value = "";
+            }
+        }
+
+        const backToTopBtn = document.getElementById("backToTop");
+        window.onscroll = function() {
+            if (document.body.scrollTop > 500 || document.documentElement.scrollTop > 500) {
+                backToTopBtn.style.display = "flex";
+            } else {
+                backToTopBtn.style.display = "none";
+            }
+        };
+    </script>
+</body>
+</html>
