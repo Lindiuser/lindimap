@@ -193,7 +193,13 @@
             }
         }
     </style>
-     /* Stilimi i ikonës si buton */
+  <style>
+        /* Scroll i lëmuar */
+        html {
+            scroll-behavior: smooth;
+        }
+
+        /* Stilimi i ikonës si buton */
         #backToTopBtn {
             display: none; /* Fshihet fillimisht */
             position: fixed;
@@ -510,6 +516,18 @@
         <i class="fab fa-whatsapp"></i>
     </a>
       <div 
+        id="backToTopBtn" 
+        onclick="scrollToTop()"
+        class="glow-effect"
+        title="Kthehu lart"
+    >
+        <svg xmlns="http://www.w3.org/2000/svg" class="h-10 w-16" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1" d="M5 15l7-7 7 7" />
+        </svg>
+    </div>
+
+    </script>
+     <div 
         id="backToTopBtn" 
         onclick="scrollToTop()"
         class="glow-effect"
